@@ -1,2 +1,2 @@
-package com.example.appsdev.Core.Utils
+package com.example.appsdev.Core
 

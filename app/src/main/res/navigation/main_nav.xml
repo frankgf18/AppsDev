@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.example.appsdev.Home.Home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home_to_tools"
+            app:destination="@id/tools" />
+        <action
+            android:id="@+id/action_home_to_dogedex"
+            app:destination="@id/dogedex" />
+    </fragment>
+    <fragment
+        android:id="@+id/dogedex"
+        android:name="com.example.appsdev.Home.Dogedex.Dogedex"
+        android:label="fragment_dogedex"
+        tools:layout="@layout/fragment_dogedex" />
+    <fragment
+        android:id="@+id/tools"
+        android:name="com.example.appsdev.Home.Tools.Tools"
+        android:label="fragment_tools"
+        tools:layout="@layout/fragment_tools" />
+</navigation>
