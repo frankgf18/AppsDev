@@ -28,6 +28,12 @@
         <action
             android:id="@+id/action_dogedex_to_dogList"
             app:destination="@id/dogList" />
+        <action
+            android:id="@+id/action_dogedex_to_dogFoto"
+            app:destination="@id/dogFoto" />
+        <action
+            android:id="@+id/action_dogedex_to_dogDetalle"
+            app:destination="@id/dogDetalle" />
     </fragment>
     <fragment
         android:id="@+id/tools"
@@ -81,5 +87,14 @@
         <action
             android:id="@+id/action_dogList_to_dogDetalle"
             app:destination="@id/dogDetalle" />
+    </fragment>
+    <fragment
+        android:id="@+id/dogFoto"
+        android:name="com.example.appsdev.Home.Dogedex.Ui.DogFoto.DogFoto"
+        android:label="fragment_dog_foto"
+        tools:layout="@layout/fragment_dog_foto" >
+        <argument
+            android:name="fotoUri"
+            app:argType="string" />
     </fragment>
 </navigation>
