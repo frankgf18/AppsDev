@@ -24,7 +24,11 @@
         android:id="@+id/dogedex"
         android:name="com.example.appsdev.Home.Dogedex.Dogedex"
         android:label="fragment_dogedex"
-        tools:layout="@layout/fragment_dogedex" />
+        tools:layout="@layout/fragment_dogedex" >
+        <action
+            android:id="@+id/action_dogedex_to_dogList"
+            app:destination="@id/dogList" />
+    </fragment>
     <fragment
         android:id="@+id/tools"
         android:name="com.example.appsdev.Home.Tools.Tools"
@@ -60,4 +64,22 @@
         android:name="com.example.appsdev.Home.MarketFB.MarketFB"
         android:label="fragment_market_fb"
         tools:layout="@layout/fragment_market_fb" />
+    <fragment
+        android:id="@+id/dogDetalle"
+        android:name="com.example.appsdev.Home.Dogedex.Ui.DogDetalle.DogDetalle"
+        android:label="fragment_dog_detalle"
+        tools:layout="@layout/fragment_dog_detalle" >
+        <argument
+            android:name="dog"
+            app:argType="com.jjmf.dogedex.Model.Dog" />
+    </fragment>
+    <fragment
+        android:id="@+id/dogList"
+        android:name="com.example.appsdev.Home.Dogedex.Ui.DogList.DogList"
+        android:label="fragment_dog_list"
+        tools:layout="@layout/fragment_dog_list" >
+        <action
+            android:id="@+id/action_dogList_to_dogDetalle"
+            app:destination="@id/dogDetalle" />
+    </fragment>
 </navigation>

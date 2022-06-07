@@ -9,7 +9,9 @@ import com.example.appsdev.Core.Utils.MENSAJE_LOADER
 import com.example.appsdev.Core.Utils.RETROCEDER
 import com.example.appsdev.databinding.ActivityMainBinding
 import com.example.appsdev.databinding.AlertLoaderBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var bindingAlertLoaderBinding: AlertLoaderBinding

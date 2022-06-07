@@ -10,6 +10,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        //Image cropper
+        maven { url 'https://jitpack.io' }
     }
 }
 rootProject.name = "AppsDev"
