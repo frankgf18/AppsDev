@@ -16,14 +16,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var bindingAlertLoaderBinding: AlertLoaderBinding
     private lateinit var alert : AlertDialog
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         alert = cargando()
     }
-
 
     override fun onBackPressed() {
         if (!RETROCEDER){
