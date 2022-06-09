@@ -29,6 +29,7 @@ class Tools : Fragment() {
             cardAnyChart.setOnClickListener { navigate(R.id.action_tools_to_anyChart) }
             cardCamara.setOnClickListener { navigate(R.id.action_tools_to_camara) }
             cardRecyclerView.setOnClickListener { navigate(R.id.action_tools_to_recyclerView) }
+            cardProgressBar.setOnClickListener { navigate(R.id.action_tools_to_progressBar2) }
         }
     }
 }
