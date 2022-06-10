@@ -3,4 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="empty">empty</string>
+    <string name="tvHelloHijo1">Hola, soy el Hijo N° 1</string>
+    <string name="tvHelloHijo2">Hola, soy el Hijo N° 2</string>
+    <string name="tvHelloHijo3">Hola, soy el Hijo N° 3</string>
 </resources>

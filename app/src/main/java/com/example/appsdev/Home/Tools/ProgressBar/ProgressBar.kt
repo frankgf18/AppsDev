@@ -16,7 +16,7 @@ import kotlinx.coroutines.*
 import javax.inject.Scope
 
 @AndroidEntryPoint
-class ProgressBar : Fragment(), {
+class ProgressBar : Fragment(){
     private lateinit var binding: FragmentProgressBarBinding
     private val viewModel: ProgressBarViewModel by viewModels()
     private val scope = MainScope()
@@ -39,8 +39,5 @@ class ProgressBar : Fragment(), {
         val hilo = Thread()
 
         var x = 0
-        while (0 <= 100){
-            delay(1000)
-        }
     }
 }

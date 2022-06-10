@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <translate android:toYDelta="-100%" android:duration="3500"/>
+    <!--<translate android:toYDelta="-100%" android:duration="3500"/>centro_a_arriba  -->
+    <!--<translate android:toYDelta="100%" android:duration="3500"/>centro_a_abajo  -->
+    <!--<translate android:fromYDelta="100%" android:duration="3500"/>abajo_al_centro  -->
+    <!--<translate android:fromYDelta="-100%" android:duration="3500"/>arriba_al_centro  -->
+    <!--
+      to-> sostiene del centro al fragmento u objeto y lo envia pa arriba o abajo
+      from-> sostiene de los extremos al fragmento u objeto y lo envia al centro
+      -->
+</set>

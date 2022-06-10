@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_animacion"
+    app:startDestination="@id/hijo1">
+
+    <fragment
+        android:id="@+id/hijo1"
+        android:name="com.example.appsdev.Home.Animacion.AnimacionesHIjos.Hijo1"
+        android:label="fragment_hijo1"
+        tools:layout="@layout/fragment_hijo1" >
+        <action
+            android:id="@+id/action_hijo1_to_hijo2"
+            app:destination="@id/hijo2"
+            app:enterAnim="@anim/center_to_top" />
+    </fragment>
+    <fragment
+        android:id="@+id/hijo2"
+        android:name="com.example.appsdev.Home.Animacion.AnimacionesHIjos.Hijo2"
+        android:label="fragment_hijo2"
+        tools:layout="@layout/fragment_hijo2" >
+        <action
+            android:id="@+id/action_hijo2_to_hijo3"
+            app:destination="@id/hijo3" />
+    </fragment>
+    <fragment
+        android:id="@+id/hijo3"
+        android:name="com.example.appsdev.Home.Animacion.AnimacionesHIjos.Hijo3"
+        android:label="fragment_hijo3"
+        tools:layout="@layout/fragment_hijo3" />
+</navigation>
