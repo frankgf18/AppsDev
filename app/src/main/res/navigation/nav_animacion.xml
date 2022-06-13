@@ -13,7 +13,10 @@
         <action
             android:id="@+id/action_hijo1_to_hijo2"
             app:destination="@id/hijo2"
-            app:enterAnim="@anim/center_to_top" />
+            app:enterAnim="@anim/bottom_to_center"
+            app:exitAnim="@anim/center_to_top"
+            app:popEnterAnim="@anim/top_to_center"
+            app:popExitAnim="@anim/center_to_bottom" />
     </fragment>
     <fragment
         android:id="@+id/hijo2"
@@ -22,7 +25,11 @@
         tools:layout="@layout/fragment_hijo2" >
         <action
             android:id="@+id/action_hijo2_to_hijo3"
-            app:destination="@id/hijo3" />
+            app:destination="@id/hijo3"
+            app:enterAnim="@anim/bottom_to_center"
+            app:exitAnim="@anim/center_to_top"
+            app:popEnterAnim="@anim/top_to_center"
+            app:popExitAnim="@anim/center_to_bottom" />
     </fragment>
     <fragment
         android:id="@+id/hijo3"
