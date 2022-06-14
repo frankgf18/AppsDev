@@ -1,4 +1,4 @@
-package com.example.appsdev.Home.Animacion.AnimacionesHIjos
+package com.example.appsdev.Home.Animacion.Transiciones.AnimacionesHIjos
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

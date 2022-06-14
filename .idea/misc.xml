@@ -3,13 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android Studio/AppsDev/app/src/main/res/drawable/bottom_sheet_background.xml" value="0.3095" />
+        <entry key="..\:/Android Studio/AppsDev/app/src/main/res/drawable/custom_dialog_20dp.xml" value="0.216" />
         <entry key="..\:/Android Studio/AppsDev/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Android Studio/AppsDev/app/src/main/res/layout/card_home_item.xml" value="0.5" />
+        <entry key="..\:/Android Studio/AppsDev/app/src/main/res/layout/fragment_animacion.xml" value="0.3009833262077811" />
         <entry key="..\:/Android Studio/AppsDev/app/src/main/res/layout/fragment_animacion_padre.xml" value="0.25309961522017954" />
+        <entry key="..\:/Android Studio/AppsDev/app/src/main/res/layout/fragment_bottom_padre.xml" value="0.2894399315946986" />
         <entry key="..\:/Android Studio/AppsDev/app/src/main/res/layout/fragment_hijo1.xml" value="0.25309961522017954" />
         <entry key="..\:/Android Studio/AppsDev/app/src/main/res/layout/fragment_hijo2.xml" value="0.25309961522017954" />
         <entry key="..\:/Android Studio/AppsDev/app/src/main/res/layout/fragment_hijo3.xml" value="0.24155622060709706" />
         <entry key="..\:/Android Studio/AppsDev/app/src/main/res/layout/fragment_home.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android Studio/AppsDev/app/src/main/res/layout/layout_bottom_sheet.xml" value="0.30012825994014536" />
         <entry key="..\:/Users/Desarrollo/AndroidStudioProjects/ASYS/AppsDev/app/src/main/res/drawable/custom_dialog_20dp.xml" value="0.5435" />
         <entry key="..\:/Users/Desarrollo/AndroidStudioProjects/ASYS/AppsDev/app/src/main/res/drawable/ic_camara.xml" value="0.3935" />
         <entry key="..\:/Users/Desarrollo/AndroidStudioProjects/ASYS/AppsDev/app/src/main/res/drawable/progressbarcolor.xml" value="0.5435" />

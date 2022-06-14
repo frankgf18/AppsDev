@@ -13,4 +13,12 @@
     <color name="P3">#3371F5</color>
     <color name="P4">#3F28FA</color>
     <color name="P5">#2337DE</color>
+
+    <color name="BT1">#22383D</color>
+    <color name="BT2">#17B3D6</color>
+    <color name="BT3">#68ADBD</color>
+    <color name="BT4">#233A40</color>
+    <color name="BT5">#4F838F</color>
+    <color name="BT6">#B1BDD2</color>
+    <color name="BT7">#043B36</color>
 </resources>

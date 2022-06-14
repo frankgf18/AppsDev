@@ -1,4 +1,4 @@
-package com.example.appsdev.Home
+package com.example.appsdev.Home.Animacion
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,14 +9,15 @@ import androidx.navigation.fragment.findNavController
 import com.example.appsdev.Core.BaseAdapter
 import com.example.appsdev.Core.Utils.cargarFoto
 import com.example.appsdev.Core.Utils.inflarLayout
+import com.example.appsdev.Home.ItemsCards
 import com.example.appsdev.R
 import com.example.appsdev.databinding.CardHomeItemBinding
-import com.example.appsdev.databinding.FragmentHomeBinding
-import dagger.hilt.android.AndroidEntryPoint
+import com.example.appsdev.databinding.FragmentAnimacionBinding
 
-@AndroidEntryPoint
-class Home : Fragment() {
-    private lateinit var binding: FragmentHomeBinding
+class Animacion : Fragment() {
+
+    private lateinit var binding : FragmentAnimacionBinding
+
     private val adaptador: BaseAdapter<ItemsCards> = object : BaseAdapter<ItemsCards>(emptyList()) {
         override fun getViewHolder(parent: ViewGroup): BaseAdapterViewHolder<ItemsCards> {
             val view = requireContext().inflarLayout(R.layout.card_home_item, parent)
@@ -34,38 +35,22 @@ class Home : Fragment() {
         }
     }
 
-    var listItemsHome = listOf<ItemsCards>(
-        //La posición no debe repetirse
-        //0 = a nulo
-        ItemsCards(0, "Tools", R.id.action_home_to_tools),
-        ItemsCards(1, "Dogedex", R.id.action_home_to_dogedex),
-        ItemsCards(2, "MarketFB" , R.id.action_home_to_marketFB),
-        ItemsCards(3, "Animacion", R.id.action_home_to_animacion)
+    var listAnimation = listOf(
+        ItemsCards(0, "Transiciones", R.id.action_animacion_to_animacionPadre),
+        ItemsCards(1, "Bottom Layout", R.id.action_animacion_to_bottomPadre)
     )
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        return inflater.inflate(R.layout.fragment_animacion, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentHomeBinding.bind(view)
-        binding.rvItemTools.adapter = adaptador
-        adaptador.update(listItemsHome)
-        //events()
+        binding = FragmentAnimacionBinding.bind(view)
+        init()
     }
 
-    /*private fun events() = with(binding) {
-        findNavController().apply {
-            cardTools.setOnClickListener { navigate(R.id.action_home_to_tools) }
-            cardDogedex.setOnClickListener { navigate(R.id.action_home_to_dogedex) }
-            cardMarketFB.setOnClickListener { navigate(R.id.action_home_to_marketFB) }
-        }
-    }*/
+    private fun init()= with(binding){
+        rvAnimationTools.adapter = adaptador
+        adaptador.update(listAnimation)
+    }
 }
-
-data class ItemsCards(
-    var position: Int?,
-    var name:String?,
-    var navigation: Int?,
-    var image: Int? = 0
-)

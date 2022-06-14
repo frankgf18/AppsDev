@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/bottom_sheet_background"
+    android:layout_width="match_parent"
+    android:id="@+id/bottomSheetContainer"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tvVenderAhora"
+            android:paddingVertical="15dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/BT5"
+            android:textAlignment="center"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/BT6"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_por_defecto"
+                app:riv_corner_radius="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:orientation="vertical"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tvOferta"
+                    android:textColor="@color/BT7"
+                    android:textStyle="bold"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tvManzana"
+                    android:textColor="@color/BT1"
+                    android:textStyle="bold"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/tvPrecio"
+                    android:textSize="14sp"
+                    android:textColor="@color/BT5"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/BT6"/>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvBottomLayout"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="15dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="3"
+            android:layerType="none"
+            tools:listitem="@layout/card_home_item" />
+
+        <Button
+            android:id="@+id/btnComprarAhora"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/BT7"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:text="@string/tvComprarAhora"
+            android:textAllCaps="false"
+            app:cornerRadius="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="35dp"/>
+
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/BT7"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:text="@string/tvCancelar"
+            android:textAllCaps="false"
+            app:cornerRadius="15dp"
+            android:layout_marginHorizontal="35dp"
+            android:layout_marginBottom="8dp"/>
+
+    </LinearLayout>
+
+</FrameLayout>

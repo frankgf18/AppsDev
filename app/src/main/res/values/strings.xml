@@ -6,4 +6,12 @@
     <string name="tvHelloHijo1">Hola, soy el Hijo N° 1</string>
     <string name="tvHelloHijo2">Hola, soy el Hijo N° 2</string>
     <string name="tvHelloHijo3">Hola, soy el Hijo N° 3</string>
+    <string name="tvAnimaciones">Animaciones</string>
+    <string name="tvMostrar">Mostrar</string>
+    <string name="tvVenderAhora">Vender ahora</string>
+    <string name="tvManzana">Manzana</string>
+    <string name="tvPrecio">$ 01.50</string>
+    <string name="tvOferta">OFERTA!!</string>
+    <string name="tvComprarAhora">Comprar ahora</string>
+    <string name="tvCancelar">Cancelar</string>
 </resources>

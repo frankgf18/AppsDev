@@ -96,4 +96,11 @@ dependencies {
     //TensorFlow Lite
     implementation "org.tensorflow:tensorflow-lite:0.0.0-nightly-SNAPSHOT"
     implementation "org.tensorflow:tensorflow-lite-support:0.1.0"
+
+    //BOTTOM LAYOUT
+    //Material Design
+    implementation "com.google.android.material:material:1.7.0-alpha02"
+
+    //Rounded ImageView
+    implementation "com.makeramen:roundedimageview:2.3.0"
 }

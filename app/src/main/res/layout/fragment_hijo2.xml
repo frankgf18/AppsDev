@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Home.Animacion.AnimacionesHIjos.Hijo2"
+    tools:context=".Home.Animacion.Transiciones.AnimacionesHIjos.Hijo2"
     android:gravity="center"
     android:orientation="vertical">
 

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/hijo1"
-        android:name="com.example.appsdev.Home.Animacion.AnimacionesHIjos.Hijo1"
+        android:name="com.example.appsdev.Home.Animacion.Transiciones.AnimacionesHIjos.Hijo1"
         android:label="fragment_hijo1"
         tools:layout="@layout/fragment_hijo1" >
         <action
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/hijo2"
-        android:name="com.example.appsdev.Home.Animacion.AnimacionesHIjos.Hijo2"
+        android:name="com.example.appsdev.Home.Animacion.Transiciones.AnimacionesHIjos.Hijo2"
         android:label="fragment_hijo2"
         tools:layout="@layout/fragment_hijo2" >
         <action
@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/hijo3"
-        android:name="com.example.appsdev.Home.Animacion.AnimacionesHIjos.Hijo3"
+        android:name="com.example.appsdev.Home.Animacion.Transiciones.AnimacionesHIjos.Hijo3"
         android:label="fragment_hijo3"
         tools:layout="@layout/fragment_hijo3" />
 </navigation>
