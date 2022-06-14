@@ -56,6 +56,7 @@
                     android:textSize="18sp"/>
 
                 <TextView
+                    android:id="@+id/tvFruta"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/tvManzana"
@@ -64,6 +65,7 @@
                     android:textSize="15sp"/>
 
                 <TextView
+                    android:id="@+id/tvPrecio"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"

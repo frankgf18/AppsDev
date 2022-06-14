@@ -22,6 +22,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 class BottomPadre : Fragment() {
 
     private lateinit var binding : FragmentBottomPadreBinding
+    private lateinit var bindingBottomSheetDialog: LayoutBottomSheetBinding
 
     override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View? {
         return inflater.inflate(R.layout.fragment_bottom_padre, container, false)
@@ -42,6 +43,10 @@ class BottomPadre : Fragment() {
                         name.text = entity.name
                         image.cargarFoto(entity.image!!)
                         cardItem.setOnClickListener {
+                            bindingBottomSheetDialog.apply {
+                                tvFruta.text = entity.name
+                                tvPrecio.text = "$ 0${entity.navigation.toString()}.00"
+                            }
                             //findNavController().navigate(entity.navigation!!)
                         }
                     }
@@ -51,10 +56,10 @@ class BottomPadre : Fragment() {
     }
 
     var listAnimation = listOf(
-        ItemsCards(0, "Prueba 1", 0),
-        ItemsCards(1, "Prueba 2",0),
-        ItemsCards(2, "Prueba 3",0),
-        ItemsCards(3, "Prueba 4",0)
+        ItemsCards(0, "Manzana", 1),
+        ItemsCards(1, "Plantano",2),
+        ItemsCards(2, "Fresa",3),
+        ItemsCards(3, "Papaya",4)
     )
 
     private fun init()= with(binding){
@@ -65,13 +70,12 @@ class BottomPadre : Fragment() {
 
 
     private fun mostrarBottomSheet(){
-        //val builder = AlertDialog.Builder(requireContext())
         val bottomSheetDialog = BottomSheetDialog(requireContext(), R.style.BottomSheetDialogTheme)
         val view = layoutInflater.inflate(R.layout.layout_bottom_sheet, null)
         bottomSheetDialog.setContentView(view)
         bottomSheetDialog.apply {
             show()
-            LayoutBottomSheetBinding.bind(view).apply {
+            bindingBottomSheetDialog = LayoutBottomSheetBinding.bind(view).apply {
                 rvBottomLayout.adapter = adaptador
                 adaptador.update(listAnimation)
 
