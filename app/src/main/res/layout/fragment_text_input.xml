@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/idPadre"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Home.Animacion.TextInput.TextInput">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="30dp">
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="Buscar"
+            android:textAllCaps="false" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a quam eget dolor porttitor accumsan. Quisque sed hendrerit risus. Aenean eget semper ligula, ut vestibulum eros. Suspendisse venenatis dui urna, sit amet pharetra ex suscipit id. Etiam purus nulla, volutpat in egestas nec, sodales nec ipsum. Mauris consequat elementum turpis, vitae tempor felis aliquam et. Vivamus commodo sem dui, in posuere nunc fringilla sed. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus." />
+
+</LinearLayout>

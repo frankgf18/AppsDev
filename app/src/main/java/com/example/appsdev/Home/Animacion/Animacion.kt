@@ -37,7 +37,8 @@ class Animacion : Fragment() {
 
     var listAnimation = listOf(
         ItemsCards(0, "Transiciones", R.id.action_animacion_to_animacionPadre),
-        ItemsCards(1, "Bottom Layout", R.id.action_animacion_to_bottomPadre)
+        ItemsCards(1, "Bottom Layout", R.id.action_animacion_to_bottomPadre),
+        ItemsCards(2,"Text Input", R.id.action_animacion_to_textInput)
     )
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_animacion, container, false)

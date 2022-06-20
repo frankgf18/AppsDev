@@ -26,6 +26,8 @@
         <entry key="..\:/Users/Desarrollo/AndroidStudioProjects/ASYS/AppsDev/app/src/main/res/layout/fragment_dogedex.xml" value="0.55" />
         <entry key="..\:/Users/Desarrollo/AndroidStudioProjects/ASYS/AppsDev/app/src/main/res/layout/fragment_home.xml" value="0.55" />
         <entry key="..\:/Users/Desarrollo/AndroidStudioProjects/ASYS/AppsDev/app/src/main/res/layout/fragment_tools.xml" value="0.55" />
+        <entry key="..\:/Users/Desarrollo/AndroidStudioProjects/GitHub/AppsDev/app/src/main/res/layout/fragment_animacion.xml" value="0.55" />
+        <entry key="..\:/Users/Desarrollo/AndroidStudioProjects/GitHub/AppsDev/app/src/main/res/layout/fragment_text_input.xml" value="0.1" />
       </map>
     </option>
   </component>
@@ -34,5 +36,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1" />
+      </ProjectState>
+    </option>
   </component>
 </project>
