@@ -4,7 +4,6 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.graphics.Color
-import android.graphics.drawable.BitmapDrawable
 import android.location.Address
 import android.location.Geocoder
 import android.location.Location
@@ -13,6 +12,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import cn.pedant.SweetAlert.SweetAlertDialog
 import com.example.appsdev.Core.BaseFragment
 import com.example.appsdev.R
 import com.example.appsdev.databinding.FragmentMapasBinding
@@ -25,7 +25,9 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class Mapas : BaseFragment<FragmentMapasBinding>(FragmentMapasBinding::inflate), OnMapReadyCallback{
+
     private lateinit var map: GoogleMap
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -43,9 +45,20 @@ class Mapas : BaseFragment<FragmentMapasBinding>(FragmentMapasBinding::inflate),
         mapView.getMapAsync(this)
     }
 
+    private val color1 = 0xff000000
+
     private fun events() {
         binding.btnRegistrar.setOnClickListener {
             medirDisctancia(map.myLocation)
+        }
+        binding.btnAlerta.setOnClickListener {
+
+            SweetAlertDialog(requireActivity(), SweetAlertDialog.CUSTOM_IMAGE_TYPE).apply {
+                titleText = "Sweet!"
+                contentText = "Here's a custom image."
+                setCustomImage(R.drawable.perro)
+                show();
+            }
         }
     }
 

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".Home.Alertas.Alertas">
+
+    <Button
+        android:id="@+id/btnExito"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp"
+        android:backgroundTint="@color/P1"
+        android:text="Exito"
+        app:cornerRadius="20dp" />
+
+    <Button
+        android:id="@+id/btnAdvertencia"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp"
+        android:backgroundTint="@color/P2"
+        android:text="Advertencia"
+        app:cornerRadius="20dp" />
+
+    <Button
+        android:id="@+id/btnError"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp"
+        android:backgroundTint="@color/P3"
+        android:text="Error"
+        app:cornerRadius="20dp" />
+
+    <Button
+        android:id="@+id/btnInformacion"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp"
+        android:backgroundTint="@color/P4"
+        android:text="Informacion"
+        app:cornerRadius="20dp" />
+
+    <Button
+        android:id="@+id/btnCargando"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp"
+        android:backgroundTint="@color/P5"
+        android:text="Cargando"
+        app:cornerRadius="20dp" />
+
+    <Button
+        android:id="@+id/btnConfirmacion"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp"
+        android:backgroundTint="@color/purple_500"
+        android:text="Confirmacion"
+        app:cornerRadius="20dp" />
+    <Button
+        android:id="@+id/btnImagen"
+        android:layout_width="200dp"
+        android:backgroundTint="@color/purple_700"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp"
+        android:text="Imagen"
+        app:cornerRadius="20dp" />
+
+
+</LinearLayout>
