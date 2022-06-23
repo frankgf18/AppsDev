@@ -24,10 +24,10 @@ class Animacion : Fragment() {
             return object : BaseAdapterViewHolder<ItemsCards>(view) {
                 override fun bind(entity: ItemsCards) {
                     CardHomeItemBinding.bind(view).apply {
-                        name.text = entity.name
-                        image.cargarFoto(entity.image!!)
+                        tvName.text = entity.name
+                        ivIcono.cargarFoto(entity.image!!)
                         cardItem.setOnClickListener {
-                            findNavController().navigate(entity.navigation!!)
+                            findNavController().navigate(entity.navigation)
                         }
                     }
                 }
@@ -36,9 +36,9 @@ class Animacion : Fragment() {
     }
 
     var listAnimation = listOf(
-        ItemsCards(0, "Transiciones", R.id.action_animacion_to_animacionPadre),
-        ItemsCards(1, "Bottom Layout", R.id.action_animacion_to_bottomPadre),
-        ItemsCards(2,"Text Input", R.id.action_animacion_to_textInput)
+        ItemsCards( "Transiciones", R.id.action_animacion_to_animacionPadre),
+        ItemsCards("Bottom Layout", R.id.action_animacion_to_bottomPadre),
+        ItemsCards("Text Input", R.id.action_animacion_to_textInput)
     )
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_animacion, container, false)

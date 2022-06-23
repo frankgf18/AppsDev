@@ -40,12 +40,12 @@ class BottomPadre : Fragment() {
             return object : BaseAdapterViewHolder<ItemsCards>(view) {
                 override fun bind(entity: ItemsCards) {
                     CardHomeItemBinding.bind(view).apply {
-                        name.text = entity.name
-                        image.cargarFoto(entity.image!!)
+                        tvName.text = entity.name
+                        ivIcono.cargarFoto(entity.image!!)
                         cardItem.setOnClickListener {
                             bindingBottomSheetDialog.apply {
                                 tvFruta.text = entity.name
-                                tvPrecio.text = "$ 0${entity.navigation.toString()}.00"
+                                tvPrecio.text = "$ 0${entity.navigation}.00"
                             }
                             //findNavController().navigate(entity.navigation!!)
                         }
@@ -56,10 +56,10 @@ class BottomPadre : Fragment() {
     }
 
     var listAnimation = listOf(
-        ItemsCards(0, "Manzana", 1),
-        ItemsCards(1, "Plantano",2),
-        ItemsCards(2, "Fresa",3),
-        ItemsCards(3, "Papaya",4)
+        ItemsCards( "Manzana", 1),
+        ItemsCards( "Plantano",2),
+        ItemsCards( "Fresa",3),
+        ItemsCards( "Papaya",4)
     )
 
     private fun init()= with(binding){

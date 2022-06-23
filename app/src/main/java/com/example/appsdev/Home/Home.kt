@@ -23,10 +23,15 @@ class Home : Fragment() {
             return object : BaseAdapterViewHolder<ItemsCards>(view) {
                 override fun bind(entity: ItemsCards) {
                     CardHomeItemBinding.bind(view).apply {
-                        name.text = entity.name
-                        image.cargarFoto(entity.image!!)
-                        cardItem.setOnClickListener {
-                            findNavController().navigate(entity.navigation!!)
+                        entity.apply {
+                            tvName.text = name
+
+                            image?.let {
+                                ivIcono.cargarFoto(it)
+                            }
+                            cardItem.setOnClickListener {
+                                findNavController().navigate(navigation)
+                            }
                         }
                     }
                 }
@@ -37,12 +42,12 @@ class Home : Fragment() {
     var listItemsHome = listOf<ItemsCards>(
         //La posición no debe repetirse
         //0 = a nulo
-        ItemsCards(0, "Tools", R.id.action_home_to_tools),
-        ItemsCards(1, "Dogedex", R.id.action_home_to_dogedex),
-        ItemsCards(2, "MarketFB" , R.id.action_home_to_marketFB),
-        ItemsCards(3, "Animacion", R.id.action_home_to_animacion),
-        ItemsCards(4,"Mapas",R.id.action_home_to_mapas),
-        ItemsCards(5,"Alertas",R.id.action_home_to_alertas)
+        ItemsCards( "Tools", R.id.action_home_to_tools),
+        ItemsCards( "Dogedex", R.id.action_home_to_dogedex, R.drawable.ic_dogedex),
+        ItemsCards( "MarketFB" , R.id.action_home_to_marketFB, R.drawable.ic_market),
+        ItemsCards( "Animacion", R.id.action_home_to_animacion),
+        ItemsCards("Mapas",R.id.action_home_to_mapas, R.drawable.ic_mapa),
+        ItemsCards("Alertas",R.id.action_home_to_alertas, R.drawable.ic_alerta)
     )
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_home, container, false)
@@ -66,8 +71,7 @@ class Home : Fragment() {
 }
 
 data class ItemsCards(
-    var position: Int?,
-    var name:String?,
-    var navigation: Int?,
-    var image: Int? = 0
+    var name:String,
+    var navigation: Int,
+    var image: Int? = null
 )

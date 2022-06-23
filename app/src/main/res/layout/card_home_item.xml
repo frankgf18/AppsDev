@@ -22,13 +22,14 @@
         android:padding="10dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/image"
+            android:id="@+id/ivIcono"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@color/purple_200" />
+            
+            android:src="@drawable/ic_dogedex" />
 
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/tvName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
