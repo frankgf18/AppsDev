@@ -15,7 +15,6 @@ import com.example.appsdev.databinding.CardHomeItemBinding
 import com.example.appsdev.databinding.FragmentAnimacionBinding
 
 class Animacion : Fragment() {
-
     private lateinit var binding : FragmentAnimacionBinding
 
     private val adaptador: BaseAdapter<ItemsCards> = object : BaseAdapter<ItemsCards>(emptyList()) {
@@ -25,7 +24,9 @@ class Animacion : Fragment() {
                 override fun bind(entity: ItemsCards) {
                     CardHomeItemBinding.bind(view).apply {
                         tvName.text = entity.name
-                        ivIcono.cargarFoto(entity.image!!)
+                        entity.image?.let {
+                            ivIcono.cargarFoto(it)
+                        }
                         cardItem.setOnClickListener {
                             findNavController().navigate(entity.navigation)
                         }
@@ -35,10 +36,11 @@ class Animacion : Fragment() {
         }
     }
 
-    var listAnimation = listOf(
+    val listAnimation = listOf(
         ItemsCards( "Transiciones", R.id.action_animacion_to_animacionPadre),
         ItemsCards("Bottom Layout", R.id.action_animacion_to_bottomPadre),
-        ItemsCards("Text Input", R.id.action_animacion_to_textInput)
+        ItemsCards("Text Input", R.id.action_animacion_to_textInput),
+        ItemsCards("CardView Desplegable", R.id.action_animacion_to_cardDesplegable)
     )
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_animacion, container, false)

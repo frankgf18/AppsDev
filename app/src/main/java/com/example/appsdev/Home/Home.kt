@@ -45,7 +45,7 @@ class Home : Fragment() {
         ItemsCards( "Tools", R.id.action_home_to_tools),
         ItemsCards( "Dogedex", R.id.action_home_to_dogedex, R.drawable.ic_dogedex),
         ItemsCards( "MarketFB" , R.id.action_home_to_marketFB, R.drawable.ic_market),
-        ItemsCards( "Animacion", R.id.action_home_to_animacion),
+        ItemsCards( "Animacion", R.id.action_home_to_animacion, R.drawable.ic_market),
         ItemsCards("Mapas",R.id.action_home_to_mapas, R.drawable.ic_mapa),
         ItemsCards("Alertas",R.id.action_home_to_alertas, R.drawable.ic_alerta),
         ItemsCards("Progress",R.id.action_home_to_loader, R.drawable.img_progress)

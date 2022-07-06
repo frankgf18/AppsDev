@@ -172,6 +172,13 @@
             app:exitAnim="@anim/center_to_left"
             app:popEnterAnim="@anim/left_to_center"
             app:popExitAnim="@anim/center_to_rigth" />
+        <action
+            android:id="@+id/action_animacion_to_cardDesplegable"
+            app:destination="@id/cardDesplegable"
+            app:enterAnim="@anim/rigth_to_center"
+            app:exitAnim="@anim/center_to_left"
+            app:popEnterAnim="@anim/left_to_center"
+            app:popExitAnim="@anim/center_to_rigth" />
     </fragment>
     <fragment
         android:id="@+id/bottomPadre"
@@ -198,4 +205,9 @@
         android:name="com.example.appsdev.Home.Loader.Loader"
         android:label="fragment_loader"
         tools:layout="@layout/fragment_loader" />
+    <fragment
+        android:id="@+id/cardDesplegable"
+        android:name="com.example.appsdev.Home.Animacion.CardDesplegable.CardDesplegable"
+        android:label="fragment_card_desplegable"
+        tools:layout="@layout/fragment_card_desplegable" />
 </navigation>
