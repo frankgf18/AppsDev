@@ -48,6 +48,13 @@
             app:exitAnim="@anim/center_to_left"
             app:popEnterAnim="@anim/left_to_center"
             app:popExitAnim="@anim/center_to_rigth" />
+        <action
+            android:id="@+id/action_home_to_loader"
+            app:destination="@id/loader"
+            app:enterAnim="@anim/rigth_to_center"
+            app:exitAnim="@anim/center_to_left"
+            app:popEnterAnim="@anim/left_to_center"
+            app:popExitAnim="@anim/center_to_rigth"  />
     </fragment>
     <fragment
         android:id="@+id/dogedex"
@@ -186,4 +193,9 @@
         android:name="com.example.appsdev.Home.Alertas.Alertas"
         android:label="fragment_alertas"
         tools:layout="@layout/fragment_alertas" />
+    <fragment
+        android:id="@+id/loader"
+        android:name="com.example.appsdev.Home.Loader.Loader"
+        android:label="fragment_loader"
+        tools:layout="@layout/fragment_loader" />
 </navigation>

@@ -47,7 +47,8 @@ class Home : Fragment() {
         ItemsCards( "MarketFB" , R.id.action_home_to_marketFB, R.drawable.ic_market),
         ItemsCards( "Animacion", R.id.action_home_to_animacion),
         ItemsCards("Mapas",R.id.action_home_to_mapas, R.drawable.ic_mapa),
-        ItemsCards("Alertas",R.id.action_home_to_alertas, R.drawable.ic_alerta)
+        ItemsCards("Alertas",R.id.action_home_to_alertas, R.drawable.ic_alerta),
+        ItemsCards("Progress",R.id.action_home_to_loader, R.drawable.img_progress)
     )
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_home, container, false)
