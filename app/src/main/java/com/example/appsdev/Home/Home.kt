@@ -48,7 +48,8 @@ class Home : Fragment() {
         ItemsCards( "Animacion", R.id.action_home_to_animacion, R.drawable.ic_market),
         ItemsCards("Mapas",R.id.action_home_to_mapas, R.drawable.ic_mapa),
         ItemsCards("Alertas",R.id.action_home_to_alertas, R.drawable.ic_alerta),
-        ItemsCards("Progress",R.id.action_home_to_loader, R.drawable.img_progress)
+        ItemsCards("Progress",R.id.action_home_to_loader, R.drawable.img_progress),
+        ItemsCards("Permisos",R.id.action_home_to_solicitarPermisos, R.drawable.ic_permisos_usuario)
     )
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_home, container, false)

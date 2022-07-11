@@ -18,4 +18,9 @@
     <string name="tvAparecer">Aparecer</string>
     <string name="tvDetallesMenuDesplegable">El menú desplegable es un tipo de menú que te permite añadir varios enlaces dentro de un enlace. Se utiliza en casos como por ejemplo, para agrupar las categorías de un blog.</string>
     <string name="tvDesaparecer">Desaparecer</string>
+    <string name="tvCamara">Cámara</string>
+    <string name="tvGaleria">Galería</string>
+    <string name="btnCancelar">Cancelar</string>
+    <string name="btnRecortar">Recortar</string>
+    <string name="tvVerFoto"><u>Ver foto</u></string>
 </resources>

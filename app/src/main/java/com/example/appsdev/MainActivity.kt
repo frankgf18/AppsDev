@@ -1,18 +1,27 @@
 package com.example.appsdev
 
+import android.Manifest
+import android.app.Activity
 import android.app.AlertDialog
+import android.content.ContentValues
+import android.content.Intent
+import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.LayoutInflater
-import com.example.appsdev.Core.Utils.LOADER_ACTIVADO
-import com.example.appsdev.Core.Utils.MENSAJE_LOADER
-import com.example.appsdev.Core.Utils.RETROCEDER
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
+import androidx.core.app.ActivityCompat
+import androidx.core.view.isGone
+import com.example.appsdev.Core.Utils.*
 import com.example.appsdev.databinding.ActivityMainBinding
 import com.example.appsdev.databinding.AlertLoaderBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+    private val viewModel : ActivityViewModel by viewModels()
     private lateinit var binding: ActivityMainBinding
     private lateinit var bindingAlertLoaderBinding: AlertLoaderBinding
     private lateinit var alert : AlertDialog
@@ -44,5 +53,34 @@ class MainActivity : AppCompatActivity() {
             window!!.setBackgroundDrawableResource(R.drawable.custom_dialog_20dp)
             setCancelable(false)
         }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+
+        when(requestCode){
+            CAMARA ->{
+                if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    viewModel.isCameraAllowed.value = 7000
+                    toast("Los pemrisos fueron aceptados. Abriendo Cámara")
+                }else{
+                    toast("Los permisos fueron rechazados por primera vez")
+                }
+            }
+
+            GALLERY ->{
+                if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    viewModel.isCameraAllowed.value = 7001
+                    toast("Los pemrisos fueron aceptados. Abriendo Galería")
+                }else{
+                    toast("Los permisos fueron rechazados por primera vez")
+                }
+            }
+        }
+
     }
 }

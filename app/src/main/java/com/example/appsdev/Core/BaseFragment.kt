@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.annotation.MainThread
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
@@ -54,6 +55,10 @@ abstract class BaseFragment<VB : ViewBinding>(private val inflate:Inflate<VB>) :
 
     protected fun navigateToDirections(directions: NavDirections){
         navigation()?.navigate(directions)
+    }
+
+    protected fun show(text:String, duration: Int = Toast.LENGTH_SHORT){
+        Toast.makeText(requireContext(), text, duration).show()
     }
 
     @MainThread
