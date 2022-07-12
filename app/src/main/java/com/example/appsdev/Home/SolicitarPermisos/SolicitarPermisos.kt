@@ -14,6 +14,7 @@ import android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI
 import android.provider.MediaStore.MediaColumns.TITLE
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
@@ -21,9 +22,12 @@ import androidx.core.content.ContextCompat.checkSelfPermission
 import androidx.core.view.isGone
 import androidx.fragment.app.activityViewModels
 import com.example.appsdev.ActivityViewModel
+import com.example.appsdev.App.App
+import com.example.appsdev.App.App.Companion.spPermissionsCamera
 import com.example.appsdev.Core.BaseFragment
 import com.example.appsdev.Core.Utils.CAMARA
 import com.example.appsdev.Core.Utils.GALLERY
+import com.example.appsdev.Core.Utils.NewSharedPreferences
 import com.example.appsdev.R
 import com.example.appsdev.databinding.AlertVerFotoBinding
 import com.example.appsdev.databinding.FragmentSolicitarPermisosBinding
@@ -97,9 +101,11 @@ class SolicitarPermisos : BaseFragment<FragmentSolicitarPermisosBinding>(Fragmen
      *  si el usuario ya ha denegado los permisos o será la primera vez que los pide)
      *  caso contrario se irá al ELSE **/
     private fun permisosCamera()= with(requireActivity()){
-        if (checkSelfPermission(CAMERA) == PERMISSION_DENIED ||
-            checkSelfPermission(WRITE_EXTERNAL_STORAGE) == PERMISSION_DENIED){
-            ActivityCompat.requestPermissions(requireActivity(), arrayOf(CAMERA, WRITE_EXTERNAL_STORAGE), CAMARA)
+        if (checkSelfPermission(CAMERA) == PERMISSION_DENIED){
+            //|| checkSelfPermission(WRITE_EXTERNAL_STORAGE) == PERMISSION_DENIED){
+            //ActivityCompat.requestPermissions(requireActivity(), arrayOf(CAMERA, WRITE_EXTERNAL_STORAGE), CAMARA)
+            verificarEstadoPermisoCamara()
+
         }else{
             openCamera()
         }
@@ -107,19 +113,29 @@ class SolicitarPermisos : BaseFragment<FragmentSolicitarPermisosBinding>(Fragmen
 
     /**Verificaremos si el usuario rechazó los permisos o es la primera vez que le aparece**/
     private fun verificarEstadoPermisoCamara() {
-        when(true){
-            ActivityCompat.shouldShowRequestPermissionRationale(requireActivity(), CAMERA) ->{
-                show("Ya se ha rechazado los permisos de la cámara")
-            }
+        val bool1 = ActivityCompat.shouldShowRequestPermissionRationale(requireActivity(), CAMERA)//true
+        //val bool2 = ActivityCompat.shouldShowRequestPermissionRationale(requireActivity(), WRITE_EXTERNAL_STORAGE)
+        show(bool1.toString())
+        if (bool1 || spPermissionsCamera.getSP(false)){ //1er -> false y true //2da(si presiona no permitir será) true u true
+            spPermissionsCamera.saveSP(bool1)
 
-            ActivityCompat.shouldShowRequestPermissionRationale(requireActivity(), WRITE_EXTERNAL_STORAGE) ->{
-                show("Ya se ha rechazado los permisos de guardar fotos.")
-            }
-
-            else->{
-                ActivityCompat.requestPermissions(requireActivity(), arrayOf(CAMERA, WRITE_EXTERNAL_STORAGE), CAMARA)
-            }
+            if (spPermissionsCamera.getSP(true))
+                ActivityCompat.requestPermissions(
+                    requireActivity(),
+                    arrayOf(CAMERA, WRITE_EXTERNAL_STORAGE),
+                    CAMARA
+                )
+            else show("Muchos permisos")
         }
+        else{
+            //Pide por primera vez la camara
+            ActivityCompat.requestPermissions(
+                requireActivity(),
+                arrayOf(CAMERA, WRITE_EXTERNAL_STORAGE),
+                CAMARA
+            )
+        }
+
     }
 
     /**Abrir galería**/

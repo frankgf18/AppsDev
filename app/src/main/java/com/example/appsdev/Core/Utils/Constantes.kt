@@ -22,3 +22,12 @@ const val CAMARA = 1000
 const val GALLERY = 1001
 
 
+//--------------------------------------------------------//
+//---- NOMBRE DEL ARCHIVO Y LLAVE DE SHAREDPREFERENCES ---//
+//--------------------------------------------------------//
+const val SP_CAMERA_PERMISSIONS  = "SP_CAMERA_PERMISSIONS"
+const val KEY_CAMERA_PERMISSIONS = "KEY_CAMERA_PERMISSIONS"
+
+const val SP_GALLERY_PERMISSIONS = "SP_GALLERY_PERMISSIONS"
+const val KEY_GALLERY_PERMISSIONS = "KEY_GALLERY_PERMISSIONS"
+

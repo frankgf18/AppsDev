@@ -67,9 +67,9 @@ class MainActivity : AppCompatActivity() {
                 if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED){
                     viewModel.isCameraAllowed.value = 7000
                     toast("Los pemrisos fueron aceptados. Abriendo Cámara")
-                }else{
-                    toast("Los permisos fueron rechazados por primera vez")
-                }
+                }/*else {
+                    toast("Los permisos fueron denegados por primera vez")
+                }*/
             }
 
             GALLERY ->{
