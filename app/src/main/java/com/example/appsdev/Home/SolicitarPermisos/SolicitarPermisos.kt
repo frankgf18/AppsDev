@@ -14,7 +14,6 @@ import android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI
 import android.provider.MediaStore.MediaColumns.TITLE
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
@@ -22,13 +21,11 @@ import androidx.core.content.ContextCompat.checkSelfPermission
 import androidx.core.view.isGone
 import androidx.fragment.app.activityViewModels
 import com.example.appsdev.ActivityViewModel
-import com.example.appsdev.App.App
 import com.example.appsdev.App.App.Companion.spPermissionsCamera
 import com.example.appsdev.App.App.Companion.spPermissionsGallery
 import com.example.appsdev.Core.BaseFragment
 import com.example.appsdev.Core.Utils.CAMARA
 import com.example.appsdev.Core.Utils.GALLERY
-import com.example.appsdev.Core.Utils.NewSharedPreferences
 import com.example.appsdev.R
 import com.example.appsdev.databinding.AlertVerFotoBinding
 import com.example.appsdev.databinding.FragmentSolicitarPermisosBinding
@@ -69,6 +66,12 @@ class SolicitarPermisos : BaseFragment<FragmentSolicitarPermisosBinding>(Fragmen
             imgBitmap = cropImageView.getCroppedImage(1000,1000)!!
             containerButtons.isGone = false
             containerCropImageView.isGone = true
+            show("Foto acualizada")
+            alertPhoto()
+        }
+        btnVolver.setOnClickListener {
+            containerButtons.isGone = false
+            containerCropImageView.isGone = true
         }
 
         tvVerFoto.setOnClickListener { alertPhoto() }
@@ -100,7 +103,7 @@ class SolicitarPermisos : BaseFragment<FragmentSolicitarPermisosBinding>(Fragmen
 
     /** La condicional detectará si el permiso esta denegado( es decir,
      *  si el usuario ya ha denegado los permisos o será la primera vez que los pide)
-     *  caso contrario se irá al ELSE **/
+     *  caso contrario se irá al ELSE*/
     private fun permisosCamera()= with(requireActivity()){
         if (checkSelfPermission(CAMERA) == PERMISSION_DENIED) {
             //|| checkSelfPermission(WRITE_EXTERNAL_STORAGE) == PERMISSION_DENIED){
@@ -119,55 +122,46 @@ class SolicitarPermisos : BaseFragment<FragmentSolicitarPermisosBinding>(Fragmen
      * SP -> true - true  (Ingresó 2da vez)
      * NP -> false - true (Ingresó 3ra vez y brinda mensaje de error (muchos intentos))**/
     private fun verificarEstadoPermisoCamara() {
-        val bool1 = ActivityCompat.shouldShowRequestPermissionRationale(requireActivity(), CAMERA)//true
-        //show("${spPermissionsCamera.getSP(false)} -- $bool3")
+        val bool1 = ActivityCompat.shouldShowRequestPermissionRationale(requireActivity(), CAMERA)
 
         if (!bool1 && spPermissionsCamera.getSP(false)){
-            show("Ingresó Tercera vez - Muchos permisos :3")
-        }else if (bool1 || spPermissionsCamera.getSP(false)){ //1er -> false y true //2da(si presiona no permitir será) true u true
+            //show("Ingresó Tercera vez - Camara ('Muchos permisos :)'")
+            show("Demasiados intentos al abrir la cámara'")
+        }else if (bool1 || spPermissionsCamera.getSP(false)){
+            //show("Ingresó Segunda vez - Camara")
             spPermissionsCamera.saveSP(bool1)
-
-            show("Ingresó Segunda vez")  //Detecta el primer "No permitir"
             ActivityCompat.requestPermissions(
                 requireActivity(),
                 arrayOf(CAMERA, WRITE_EXTERNAL_STORAGE),
                 CAMARA
             )
+            verificarEstadoPermisosCamaraGaleria()
         }else{
-            show("Ingresó Primera vez")
-            //Primera vez siempre
-            //Pide por primera vez la camara
+            //show("Ingresó Primera vez")
             ActivityCompat.requestPermissions(
                 requireActivity(),
                 arrayOf(CAMERA, WRITE_EXTERNAL_STORAGE),
                 CAMARA
             )
+            verificarEstadoPermisosCamaraGaleria()
         }
-
-
 
     }
 
-    private fun verificarEstadoPermisoGaleria2() {
+    /**Funcionará a la par con la funcion "verificarEstadoPermisoCamara"*/
+    private fun verificarEstadoPermisosCamaraGaleria() {
         val bool1 = ActivityCompat.shouldShowRequestPermissionRationale(requireActivity(), WRITE_EXTERNAL_STORAGE)//true
         show("$bool1 --- ${spPermissionsGallery.getSP(false)}")
 
         if (!bool1 && spPermissionsGallery.getSP(false)){
-            show("Ingresó Tercera vez - Muchos permisos :3")
-        }else if (bool1 || spPermissionsCamera.getSP(false)){ //1er -> false y true //2da(si presiona no permitir será) true u true
-            spPermissionsCamera.saveSP(bool1)
-
-            show("Ingresó Segunda vez")  //Detecta el primer "No permitir"
-            ActivityCompat.requestPermissions(
-                requireActivity(),
-                arrayOf(CAMERA, WRITE_EXTERNAL_STORAGE),
-                CAMARA
-            )
+            show("Ingresó Tercera vez Galería - Muchos permisos :3")
+        }else if (bool1 || spPermissionsCamera.getSP(false)){
+            spPermissionsGallery.saveSP(bool1)
+            //show("Ingresó Segunda vez - Galeria")
         }
         else{
-            show("Ingresó Primera vez Galeria")
+            //show("Ingresó Primera vez - Galeria")
         }
-
     }
 
     /**Abrir galería**/
@@ -180,27 +174,39 @@ class SolicitarPermisos : BaseFragment<FragmentSolicitarPermisosBinding>(Fragmen
     /**Verificamos si ya se han aceptados los permisos*/
     private fun permisosGallery(){
         if (checkSelfPermission(requireActivity(), READ_EXTERNAL_STORAGE) == PERMISSION_DENIED){
-            //verificarEstadoPermisoGaleria()
-            ActivityCompat.requestPermissions(requireActivity(), arrayOf(READ_EXTERNAL_STORAGE), GALLERY)
+            verificarEstadoPermisoGaleria()
         }else{
             openGallery()
         }
     }
 
-    /** Verificamos si ya se ha rechazado por segunda vez los permisos de Galeria*/
+    /** Verificamos si ya se ha rechazado por segunda vez los permisos de Galeria
+     * Con tiene los mismos posas de la funcion "verificarEstadoPermisoCamara"*/
     private fun verificarEstadoPermisoGaleria() {
-        when(true){
-            ActivityCompat.shouldShowRequestPermissionRationale(requireActivity(), READ_EXTERNAL_STORAGE) ->{
-                show("Ya se ha rechazado los permisos de la cámara")
-            }
+        val bool1 = ActivityCompat.shouldShowRequestPermissionRationale(requireActivity(), READ_EXTERNAL_STORAGE)//true
 
-            else->{
-                ActivityCompat.requestPermissions(requireActivity(), arrayOf(READ_EXTERNAL_STORAGE), GALLERY)
-            }
+        if (!bool1 && spPermissionsGallery.getSP(false)){
+            //show("Ingresó Tercera vez - Galeria - Muchos permisos ya :)")
+            show("Demasiados intentos al abrir Galería")
+        }else if (bool1 || spPermissionsGallery.getSP(false)){ //1er -> false y true //2da(si presiona no permitir será) true u true
+            //show("Ingresó Segunda vez - Galeria")
+            spPermissionsGallery.saveSP(bool1)
+            ActivityCompat.requestPermissions(
+                requireActivity(),
+                arrayOf(READ_EXTERNAL_STORAGE),
+                GALLERY
+            )
+        }else{
+            //show("Ingresó Primera vez - Galeria")
+            ActivityCompat.requestPermissions(
+                requireActivity(),
+                arrayOf(READ_EXTERNAL_STORAGE),
+                GALLERY
+            )
         }
     }
 
-    /**Obtenemos la imagen en formato URI*/
+    /**Obtenemos la imagen en formato URI y lo insertarmos a "cropImageView"*/
     private val registerForActivityResultGallery = registerForActivityResult(StartActivityForResult()){
         if (it.resultCode == Activity.RESULT_OK){
             binding.cropImageView.setImageUriAsync(it.data?.data)
@@ -211,6 +217,8 @@ class SolicitarPermisos : BaseFragment<FragmentSolicitarPermisosBinding>(Fragmen
         }
     }
 
+    /**Insertarmos la imagen Uri a "cropImageView" que por defecto ya viene obtenido
+     * al tomar laofot de la cámara*/
     private val registerForActivityResultCamera = registerForActivityResult(StartActivityForResult()){
         if (it.resultCode == Activity.RESULT_OK){
             binding.cropImageView.setImageUriAsync(imgUri)

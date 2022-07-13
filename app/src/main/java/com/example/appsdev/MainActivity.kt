@@ -65,19 +65,15 @@ class MainActivity : AppCompatActivity() {
         when(requestCode){
             CAMARA ->{
                 if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    //Reenviando datos para abrir cámara
                     viewModel.isCameraAllowed.value = 7000
-                    toast("Los pemrisos fueron aceptados. Abriendo Cámara")
-                }/*else {
-                    toast("Los permisos fueron denegados por primera vez")
-                }*/
+                }
             }
 
             GALLERY ->{
                 if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    //Reenviando datos para abrir Galeria
                     viewModel.isCameraAllowed.value = 7001
-                    toast("Los pemrisos fueron aceptados. Abriendo Galería")
-                }else{
-                    toast("Los permisos fueron rechazados por primera vez")
                 }
             }
         }

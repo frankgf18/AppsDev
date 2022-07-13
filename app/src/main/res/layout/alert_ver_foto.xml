@@ -8,8 +8,8 @@
     android:orientation="vertical">
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/ivVistaPrevia"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:layout_marginVertical="30dp"
         android:layout_marginHorizontal="50dp"
         android:src="@drawable/img_por_defecto" />
