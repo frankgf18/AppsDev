@@ -5,14 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import androidx.appcompat.app.AlertDialog
-import androidx.navigation.fragment.findNavController
 import com.example.appsdev.Core.BaseAdapter
 import com.example.appsdev.Core.Utils.cargarFoto
 import com.example.appsdev.Core.Utils.inflarLayout
 import com.example.appsdev.Core.Utils.toast
-import com.example.appsdev.Home.ItemsCards
+import com.example.appsdev.Home.Home.ItemsCards
 import com.example.appsdev.R
 import com.example.appsdev.databinding.CardHomeItemBinding
 import com.example.appsdev.databinding.FragmentBottomPadreBinding

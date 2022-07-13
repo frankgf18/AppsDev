@@ -62,6 +62,13 @@
             app:exitAnim="@anim/center_to_left"
             app:popEnterAnim="@anim/left_to_center"
             app:popExitAnim="@anim/center_to_rigth" />
+        <action
+            android:id="@+id/action_home_to_lottie"
+            app:destination="@id/lottie"
+            app:enterAnim="@anim/rigth_to_center"
+            app:exitAnim="@anim/center_to_left"
+            app:popEnterAnim="@anim/left_to_center"
+            app:popExitAnim="@anim/center_to_rigth"/>
     </fragment>
     <fragment
         android:id="@+id/dogedex"
@@ -222,4 +229,9 @@
         android:name="com.example.appsdev.Home.SolicitarPermisos.SolicitarPermisos"
         android:label="fragment_solicitar_permisos"
         tools:layout="@layout/fragment_solicitar_permisos" />
+    <fragment
+        android:id="@+id/lottie"
+        android:name="com.example.appsdev.Home.Lottie.Lottie"
+        android:label="fragment_lottie"
+        tools:layout="@layout/fragment_lottie" />
 </navigation>

@@ -1,8 +1,6 @@
 package com.example.appsdev.Core.Utils
 
 import androidx.activity.result.ActivityResultLauncher
-import com.example.appsdev.Home.ItemsCards
-import com.example.appsdev.R
 
 
 //Progress Bar

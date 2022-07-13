@@ -49,7 +49,8 @@ class Home : Fragment() {
         ItemsCards("Mapas",R.id.action_home_to_mapas, R.drawable.ic_mapa),
         ItemsCards("Alertas",R.id.action_home_to_alertas, R.drawable.ic_alerta),
         ItemsCards("Progress",R.id.action_home_to_loader, R.drawable.img_progress),
-        ItemsCards("Permisos",R.id.action_home_to_solicitarPermisos, R.drawable.ic_permisos_usuario)
+        ItemsCards("Permisos",R.id.action_home_to_solicitarPermisos, R.drawable.ic_permisos_usuario),
+        ItemsCards("Lottie",R.id.action_home_to_lottie,R.drawable.ic_lottie)
     )
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_home, container, false)
@@ -70,10 +71,9 @@ class Home : Fragment() {
             cardMarketFB.setOnClickListener { navigate(R.id.action_home_to_marketFB) }
         }
     }*/
+    data class ItemsCards(
+        var name:String,
+        var navigation: Int,
+        var image: Int? = null
+    )
 }
-
-data class ItemsCards(
-    var name:String,
-    var navigation: Int,
-    var image: Int? = null
-)
