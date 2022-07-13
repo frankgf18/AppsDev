@@ -83,12 +83,11 @@ class SolicitarPermisos : BaseFragment<FragmentSolicitarPermisosBinding>(Fragmen
         val view = LayoutInflater.from(requireContext()).inflate(R.layout.alert_ver_foto, null)
         builder.setView(view).create().apply {
             window!!.setBackgroundDrawableResource(R.drawable.custom_dialog_alert)
+            show()
             AlertVerFotoBinding.bind(view).apply {
                 if (imgBitmap!=null) ivVistaPrevia.setImageBitmap(imgBitmap)
                 contenedorAlert.setOnClickListener { dismiss() }
             }
-            show()
-            setCancelable(true)
         }
     }
 
