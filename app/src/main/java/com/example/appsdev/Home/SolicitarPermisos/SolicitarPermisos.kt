@@ -24,6 +24,7 @@ import androidx.fragment.app.activityViewModels
 import com.example.appsdev.ActivityViewModel
 import com.example.appsdev.App.App
 import com.example.appsdev.App.App.Companion.spPermissionsCamera
+import com.example.appsdev.App.App.Companion.spPermissionsGallery
 import com.example.appsdev.Core.BaseFragment
 import com.example.appsdev.Core.Utils.CAMARA
 import com.example.appsdev.Core.Utils.GALLERY
@@ -101,7 +102,7 @@ class SolicitarPermisos : BaseFragment<FragmentSolicitarPermisosBinding>(Fragmen
      *  si el usuario ya ha denegado los permisos o será la primera vez que los pide)
      *  caso contrario se irá al ELSE **/
     private fun permisosCamera()= with(requireActivity()){
-        if (checkSelfPermission(CAMERA) == PERMISSION_DENIED){
+        if (checkSelfPermission(CAMERA) == PERMISSION_DENIED) {
             //|| checkSelfPermission(WRITE_EXTERNAL_STORAGE) == PERMISSION_DENIED){
             //ActivityCompat.requestPermissions(requireActivity(), arrayOf(CAMERA, WRITE_EXTERNAL_STORAGE), CAMARA)
             verificarEstadoPermisoCamara()
@@ -111,29 +112,60 @@ class SolicitarPermisos : BaseFragment<FragmentSolicitarPermisosBinding>(Fragmen
         }
     }
 
-    /**Verificaremos si el usuario rechazó los permisos o es la primera vez que le aparece**/
+    /**Verificaremos si el usuario rechazó los permisos o es la primera vez que le aparece
+     * Patrones pa entender: SP(Sin presionar ningun permiso) - NP(No permitir)
+     * SP -> false - false (Ingresó 1era vez)
+     * NP -> true - false (Ingresó 2da vez)
+     * SP -> true - true  (Ingresó 2da vez)
+     * NP -> false - true (Ingresó 3ra vez y brinda mensaje de error (muchos intentos))**/
     private fun verificarEstadoPermisoCamara() {
         val bool1 = ActivityCompat.shouldShowRequestPermissionRationale(requireActivity(), CAMERA)//true
-        //val bool2 = ActivityCompat.shouldShowRequestPermissionRationale(requireActivity(), WRITE_EXTERNAL_STORAGE)
-        show(bool1.toString())
-        if (bool1 || spPermissionsCamera.getSP(false)){ //1er -> false y true //2da(si presiona no permitir será) true u true
+        //show("${spPermissionsCamera.getSP(false)} -- $bool3")
+
+        if (!bool1 && spPermissionsCamera.getSP(false)){
+            show("Ingresó Tercera vez - Muchos permisos :3")
+        }else if (bool1 || spPermissionsCamera.getSP(false)){ //1er -> false y true //2da(si presiona no permitir será) true u true
             spPermissionsCamera.saveSP(bool1)
 
-            if (spPermissionsCamera.getSP(true))
-                ActivityCompat.requestPermissions(
-                    requireActivity(),
-                    arrayOf(CAMERA, WRITE_EXTERNAL_STORAGE),
-                    CAMARA
-                )
-            else show("Muchos permisos")
-        }
-        else{
+            show("Ingresó Segunda vez")  //Detecta el primer "No permitir"
+            ActivityCompat.requestPermissions(
+                requireActivity(),
+                arrayOf(CAMERA, WRITE_EXTERNAL_STORAGE),
+                CAMARA
+            )
+        }else{
+            show("Ingresó Primera vez")
+            //Primera vez siempre
             //Pide por primera vez la camara
             ActivityCompat.requestPermissions(
                 requireActivity(),
                 arrayOf(CAMERA, WRITE_EXTERNAL_STORAGE),
                 CAMARA
             )
+        }
+
+
+
+    }
+
+    private fun verificarEstadoPermisoGaleria2() {
+        val bool1 = ActivityCompat.shouldShowRequestPermissionRationale(requireActivity(), WRITE_EXTERNAL_STORAGE)//true
+        show("$bool1 --- ${spPermissionsGallery.getSP(false)}")
+
+        if (!bool1 && spPermissionsGallery.getSP(false)){
+            show("Ingresó Tercera vez - Muchos permisos :3")
+        }else if (bool1 || spPermissionsCamera.getSP(false)){ //1er -> false y true //2da(si presiona no permitir será) true u true
+            spPermissionsCamera.saveSP(bool1)
+
+            show("Ingresó Segunda vez")  //Detecta el primer "No permitir"
+            ActivityCompat.requestPermissions(
+                requireActivity(),
+                arrayOf(CAMERA, WRITE_EXTERNAL_STORAGE),
+                CAMARA
+            )
+        }
+        else{
+            show("Ingresó Primera vez Galeria")
         }
 
     }
