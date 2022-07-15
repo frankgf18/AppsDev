@@ -1,19 +1,11 @@
 package com.example.appsdev
 
-import android.Manifest
-import android.app.Activity
 import android.app.AlertDialog
-import android.content.ContentValues
-import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.MediaStore
 import android.view.LayoutInflater
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
-import androidx.core.app.ActivityCompat
-import androidx.core.view.isGone
 import com.example.appsdev.Core.Utils.*
 import com.example.appsdev.databinding.ActivityMainBinding
 import com.example.appsdev.databinding.AlertLoaderBinding
@@ -63,14 +55,14 @@ class MainActivity : AppCompatActivity() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
         when(requestCode){
-            CAMARA ->{
+            REQUEST_CAMERA ->{
                 if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED){
                     //Reenviando datos para abrir cámara
                     viewModel.isCameraAllowed.value = 7000
                 }
             }
 
-            GALLERY ->{
+            REQUEST_GALLERY ->{
                 if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED){
                     //Reenviando datos para abrir Galeria
                     viewModel.isCameraAllowed.value = 7001

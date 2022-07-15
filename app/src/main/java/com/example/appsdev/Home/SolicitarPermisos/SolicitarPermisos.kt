@@ -24,8 +24,8 @@ import com.example.appsdev.ActivityViewModel
 import com.example.appsdev.App.App.Companion.spPermissionsCamera
 import com.example.appsdev.App.App.Companion.spPermissionsGallery
 import com.example.appsdev.Core.BaseFragment
-import com.example.appsdev.Core.Utils.CAMARA
-import com.example.appsdev.Core.Utils.GALLERY
+import com.example.appsdev.Core.Utils.REQUEST_CAMERA
+import com.example.appsdev.Core.Utils.REQUEST_GALLERY
 import com.example.appsdev.R
 import com.example.appsdev.databinding.AlertVerFotoBinding
 import com.example.appsdev.databinding.FragmentSolicitarPermisosBinding
@@ -132,7 +132,7 @@ class SolicitarPermisos : BaseFragment<FragmentSolicitarPermisosBinding>(Fragmen
             ActivityCompat.requestPermissions(
                 requireActivity(),
                 arrayOf(CAMERA, WRITE_EXTERNAL_STORAGE),
-                CAMARA
+                REQUEST_CAMERA
             )
             verificarEstadoPermisosCamaraGaleria()
         }else{
@@ -140,11 +140,10 @@ class SolicitarPermisos : BaseFragment<FragmentSolicitarPermisosBinding>(Fragmen
             ActivityCompat.requestPermissions(
                 requireActivity(),
                 arrayOf(CAMERA, WRITE_EXTERNAL_STORAGE),
-                CAMARA
+                REQUEST_CAMERA
             )
             verificarEstadoPermisosCamaraGaleria()
         }
-
     }
 
     /**Funcionará a la par con la funcion "verificarEstadoPermisoCamara"*/
@@ -193,14 +192,14 @@ class SolicitarPermisos : BaseFragment<FragmentSolicitarPermisosBinding>(Fragmen
             ActivityCompat.requestPermissions(
                 requireActivity(),
                 arrayOf(READ_EXTERNAL_STORAGE),
-                GALLERY
+                REQUEST_GALLERY
             )
         }else{
             //show("Ingresó Primera vez - Galeria")
             ActivityCompat.requestPermissions(
                 requireActivity(),
                 arrayOf(READ_EXTERNAL_STORAGE),
-                GALLERY
+                REQUEST_GALLERY
             )
         }
     }
