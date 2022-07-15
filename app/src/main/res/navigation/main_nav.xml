@@ -69,6 +69,13 @@
             app:exitAnim="@anim/center_to_left"
             app:popEnterAnim="@anim/left_to_center"
             app:popExitAnim="@anim/center_to_rigth"/>
+        <action
+            android:id="@+id/action_home_to_diffUtil"
+            app:destination="@id/diffUtil"
+            app:enterAnim="@anim/rigth_to_center"
+            app:exitAnim="@anim/center_to_left"
+            app:popEnterAnim="@anim/left_to_center"
+            app:popExitAnim="@anim/center_to_rigth" />
     </fragment>
     <fragment
         android:id="@+id/dogedex"
@@ -234,4 +241,9 @@
         android:name="com.example.appsdev.Home.Lottie.Lottie"
         android:label="fragment_lottie"
         tools:layout="@layout/fragment_lottie" />
+    <fragment
+        android:id="@+id/diffUtil"
+        android:name="com.example.appsdev.Home.DiffUtil.DiffUtil"
+        android:label="fragment_diff_util"
+        tools:layout="@layout/fragment_diff_util" />
 </navigation>
