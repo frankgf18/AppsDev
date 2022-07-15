@@ -3,7 +3,6 @@ package com.example.appsdev.Home.DiffUtil
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.appsdev.Core.BaseAdapter
 import com.example.appsdev.Core.BaseFragment
@@ -13,6 +12,7 @@ import com.example.appsdev.databinding.CardObjBinding
 import com.example.appsdev.databinding.FragmentDiffUtilBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.*
+
 
 @AndroidEntryPoint
 class DiffUtil : BaseFragment<FragmentDiffUtilBinding>(FragmentDiffUtilBinding::inflate) {
@@ -34,6 +34,16 @@ class DiffUtil : BaseFragment<FragmentDiffUtilBinding>(FragmentDiffUtilBinding::
         super.onViewCreated(view, savedInstanceState)
 
         init()
+        init2()
+    }
+
+    private fun init2() {
+        binding.btn.setOnClickListener {
+            val cant = binding.edtCantidad.text.toString().toInt()
+            val a = cant*50/2000
+            binding.tvCant.text = cant.toString()
+            binding.progressBar.progress = a
+        }
     }
 
     @OptIn(DelicateCoroutinesApi::class)
@@ -45,7 +55,7 @@ class DiffUtil : BaseFragment<FragmentDiffUtilBinding>(FragmentDiffUtilBinding::
             val result = mutableListOf<Obj>()
             for (i in 0..20) {
                 result.add(Obj(i.toString(), "https://randomuser.me/api/portraits/men/94.jpg"))
-                withContext(Dispatchers.Main){
+                withContext(Dispatchers.Main) {
                     adaptador.update(result)
                 }
                 delay(1000)

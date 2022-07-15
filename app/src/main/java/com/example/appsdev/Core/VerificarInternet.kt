@@ -10,7 +10,8 @@ import androidx.lifecycle.LiveData
 
 class VerificarInternet(context: Context) : LiveData<Boolean>() {
     private lateinit var networkCallback: NetworkCallback
-    private var connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+    private var connectivityManager =
+        context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
 
     //Funciona cuando la aplicacion esta activa
     override fun onActive() {
@@ -50,12 +51,9 @@ class VerificarInternet(context: Context) : LiveData<Boolean>() {
         return networkCallback
     }
 
-    fun verify(): Boolean {
-        return try {
-            //p.destroy()
-            Runtime.getRuntime().exec("ping -c 1 www.google.com").waitFor() == 0
-        } catch (e: Exception) {
-            false
-        }
+    fun verify(): Boolean = try {
+        Runtime.getRuntime().exec("ping -c 1 www.google.com").waitFor() == 0
+    } catch (e: Exception) {
+        false
     }
 }
