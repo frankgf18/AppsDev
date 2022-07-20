@@ -53,7 +53,8 @@ class Home : Fragment() {
         ItemsCards("Progress",R.id.action_home_to_loader, R.drawable.img_progress),
         ItemsCards("Permisos",R.id.action_home_to_solicitarPermisos, R.drawable.ic_permisos_usuario),
         ItemsCards("Lottie",R.id.action_home_to_lottie,R.drawable.ic_lottie),
-        ItemsCards("DiffUtil",R.id.action_home_to_diffUtil,R.drawable.ic_recycler_view)
+        ItemsCards("DiffUtil",R.id.action_home_to_diffUtil,R.drawable.ic_recycler_view),
+        ItemsCards("MultiHilos",R.id.action_home_to_diffUtil,R.drawable.ic_hilos)
     )
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_home, container, false)
