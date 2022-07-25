@@ -1,5 +1,6 @@
 package com.example.appsdev.Home.Animacion.BottomLayout
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -16,6 +17,7 @@ import com.example.appsdev.databinding.FragmentBottomPadreBinding
 import com.example.appsdev.databinding.LayoutBottomSheetBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
+@SuppressLint("SetTextI18n")
 class BottomPadre : Fragment() {
 
     private lateinit var binding : FragmentBottomPadreBinding
@@ -38,7 +40,7 @@ class BottomPadre : Fragment() {
                 override fun bind(entity: ItemsCards) {
                     CardHomeItemBinding.bind(view).apply {
                         tvName.text = entity.name
-                        ivIcono.cargarFoto(entity.image!!)
+                        ivIcono.cargarFoto(entity.image)
                         cardItem.setOnClickListener {
                             bindingBottomSheetDialog.apply {
                                 tvFruta.text = entity.name

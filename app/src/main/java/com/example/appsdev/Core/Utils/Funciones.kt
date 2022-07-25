@@ -32,9 +32,13 @@ fun Context.inflarLayout(layout: Int, parent: ViewGroup? = null): View {
     else LayoutInflater.from(this).inflate(layout, null,false)
 }
 
-fun ImageView.cargarFoto(imagen:Int){
-    if (imagen == 0 )this.setImageResource(R.drawable.img_por_defecto)
-    else this.setImageResource(imagen)
+fun ImageView.cargarFoto(imagen:Int?){
+    if (imagen!=null){
+        if (imagen == 0 )this.setImageResource(R.drawable.img_por_defecto)
+        else this.setImageResource(imagen)
+    }else{
+        this.setImageResource(R.drawable.img_por_defecto)
+    }
 }
 
 fun desplegar(contenido: LinearLayout, padre: LinearLayout, boton: Button) {
