@@ -9,7 +9,10 @@ import com.example.appsdev.Core.BaseFragment
 import com.example.appsdev.R
 import com.example.appsdev.databinding.FragmentLottieBinding
 import dagger.hilt.android.AndroidEntryPoint
-
+/**
+ * Ing. Joel Maldonado Fernandez
+ * joelmaldonadodev@gmail.com
+ * */
 @AndroidEntryPoint
 class Lottie : BaseFragment<FragmentLottieBinding>(FragmentLottieBinding::inflate) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

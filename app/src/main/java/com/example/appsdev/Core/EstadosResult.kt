@@ -3,7 +3,7 @@ package com.example.appsdev.Core
 sealed class EstadosResult<out T>{
 
     //LOADING
-    data class Cargando(val bool: Boolean) : EstadosResult<Nothing>()
+    object Cargando : EstadosResult<Nothing>()
 
     //COMPLETE
     data class Correcto<T> (val datos:T? ) : EstadosResult<T>()

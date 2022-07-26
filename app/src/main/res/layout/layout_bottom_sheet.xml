@@ -33,12 +33,11 @@
             android:orientation="horizontal"
             android:padding="8dp">
 
-            <com.makeramen.roundedimageview.RoundedImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/img_por_defecto"
-                app:riv_corner_radius="10dp"/>
+                android:src="@drawable/img_por_defecto"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

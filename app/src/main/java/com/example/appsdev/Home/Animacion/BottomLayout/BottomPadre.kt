@@ -55,10 +55,10 @@ class BottomPadre : Fragment() {
     }
 
     var listAnimation = listOf(
-        ItemsCards( "Manzana", 1),
-        ItemsCards( "Plantano",2),
-        ItemsCards( "Fresa",3),
-        ItemsCards( "Papaya",4)
+        ItemsCards( 1,"Manzana", 1),
+        ItemsCards( 2,"Plantano",2),
+        ItemsCards( 3,"Fresa",3),
+        ItemsCards( 4,"Papaya",4)
     )
 
     private fun init()= with(binding){

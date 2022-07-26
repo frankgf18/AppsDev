@@ -13,7 +13,10 @@ import com.example.appsdev.Home.Home.ItemsCards
 import com.example.appsdev.R
 import com.example.appsdev.databinding.CardHomeItemBinding
 import com.example.appsdev.databinding.FragmentAnimacionBinding
-
+/**
+ * Ing. Joel Maldonado Fernandez
+ * joelmaldonadodev@gmail.com
+ * */
 class Animacion : Fragment() {
     private lateinit var binding : FragmentAnimacionBinding
 
@@ -37,10 +40,10 @@ class Animacion : Fragment() {
     }
 
     val listAnimation = listOf(
-        ItemsCards( "Transiciones", R.id.action_animacion_to_animacionPadre),
-        ItemsCards("Bottom Layout", R.id.action_animacion_to_bottomPadre),
-        ItemsCards("Text Input", R.id.action_animacion_to_textInput),
-        ItemsCards("CardView Desplegable", R.id.action_animacion_to_cardDesplegable)
+        ItemsCards( 1,"Transiciones", R.id.action_animacion_to_animacionPadre),
+        ItemsCards(2,"Bottom Layout", R.id.action_animacion_to_bottomPadre),
+        ItemsCards(3,"Text Input", R.id.action_animacion_to_textInput),
+        ItemsCards(4,"CardView Desplegable", R.id.action_animacion_to_cardDesplegable)
     )
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_animacion, container, false)

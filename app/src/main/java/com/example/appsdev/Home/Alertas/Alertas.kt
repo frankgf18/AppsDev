@@ -12,7 +12,10 @@ import com.example.appsdev.R
 import com.example.appsdev.databinding.FragmentAlertasBinding
 import dagger.hilt.android.AndroidEntryPoint
 
-
+/**
+ * Ing. Joel Maldonado Fernandez
+ * joelmaldonadodev@gmail.com
+ * */
 @AndroidEntryPoint
 class Alertas : BaseFragment<FragmentAlertasBinding>(FragmentAlertasBinding::inflate) {
     private val viewModel: AlertViewModel by viewModels()
@@ -60,6 +63,8 @@ class Alertas : BaseFragment<FragmentAlertasBinding>(FragmentAlertasBinding::inf
             show()
         }
     }
+
+
 
     private fun informacionAlert() {
         SweetAlertDialog(requireContext(), SweetAlertDialog.SUCCESS_TYPE).apply {

@@ -12,8 +12,10 @@ import com.example.appsdev.databinding.CardObjBinding
 import com.example.appsdev.databinding.FragmentDiffUtilBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.*
-
-
+/**
+ * Ing. Joel Maldonado Fernandez
+ * joelmaldonadodev@gmail.com
+ * */
 @AndroidEntryPoint
 class DiffUtil : BaseFragment<FragmentDiffUtilBinding>(FragmentDiffUtilBinding::inflate) {
     private val adaptador: BaseAdapter<Obj> = object : BaseAdapter<Obj>(emptyList()) {

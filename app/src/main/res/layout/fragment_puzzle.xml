@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".Home.Puzzle.PuzzleFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:id="@+id/tvTittle"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="Arrastra las figuras" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv1Target"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:tint="@color/text_color"
+            android:src="@drawable/puz1"
+            android:tag="figure1" />
+
+        <ImageView
+            android:id="@+id/iv2Target"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:tint="@color/text_color"
+            android:tag="figure2"
+            android:layout_marginHorizontal="20dp"
+            android:src="@drawable/puz2" />
+
+        <ImageView
+            android:id="@+id/iv3Target"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:tag="figure3"
+            app:tint="@color/text_color"
+            android:src="@drawable/puzz3" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv3Drag"
+            android:layout_width="100dp"
+            app:tint="@color/text_color"
+            android:tag="figure3"
+            android:layout_height="100dp"
+            android:src="@drawable/puzz3" />
+
+        <ImageView
+            android:id="@+id/iv2Drag"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:tint="@color/text_color"
+            android:tag="figure2"
+            android:layout_marginHorizontal="20dp"
+            android:src="@drawable/puz2" />
+
+        <ImageView
+            android:id="@+id/iv1Drag"
+            android:layout_width="100dp"
+            android:tag="figure1"
+            android:layout_height="100dp"
+            android:src="@drawable/puz1"
+            app:tint="@color/text_color" />
+    </LinearLayout>
+
+
+</LinearLayout>

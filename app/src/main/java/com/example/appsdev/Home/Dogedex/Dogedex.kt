@@ -30,7 +30,10 @@ import java.io.ByteArrayOutputStream
 import java.io.File
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
-
+/**
+ * Ing. Joel Maldonado Fernandez
+ * joelmaldonadodev@gmail.com
+ * */
 @AndroidEntryPoint
 class Dogedex : Fragment() {
     private lateinit var binding: FragmentDogedexBinding

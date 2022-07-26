@@ -76,6 +76,34 @@
             app:exitAnim="@anim/center_to_left"
             app:popEnterAnim="@anim/left_to_center"
             app:popExitAnim="@anim/center_to_rigth" />
+        <action
+            android:id="@+id/action_home_to_puzzleFragment"
+            app:destination="@id/puzzleFragment"
+            app:enterAnim="@anim/rigth_to_center"
+            app:exitAnim="@anim/center_to_left"
+            app:popEnterAnim="@anim/left_to_center"
+            app:popExitAnim="@anim/center_to_rigth" />
+        <action
+            android:id="@+id/action_home_to_swipeFragment"
+            app:destination="@id/swipeFragment"
+            app:enterAnim="@anim/rigth_to_center"
+            app:exitAnim="@anim/center_to_left"
+            app:popEnterAnim="@anim/left_to_center"
+            app:popExitAnim="@anim/center_to_rigth"/>
+        <action
+            android:id="@+id/action_home_to_compressorFragment"
+            app:destination="@id/compressorFragment"
+            app:enterAnim="@anim/rigth_to_center"
+            app:exitAnim="@anim/center_to_left"
+            app:popEnterAnim="@anim/left_to_center"
+            app:popExitAnim="@anim/center_to_rigth" />
+        <action
+            android:id="@+id/action_home_to_graficoFragment"
+            app:destination="@id/graficoFragment"
+            app:enterAnim="@anim/rigth_to_center"
+            app:exitAnim="@anim/center_to_left"
+            app:popEnterAnim="@anim/left_to_center"
+            app:popExitAnim="@anim/center_to_rigth" />
     </fragment>
     <fragment
         android:id="@+id/dogedex"
@@ -246,4 +274,25 @@
         android:name="com.example.appsdev.Home.DiffUtil.DiffUtil"
         android:label="fragment_diff_util"
         tools:layout="@layout/fragment_diff_util" />
+    <fragment
+        android:id="@+id/puzzleFragment"
+        android:name="com.example.appsdev.Home.Puzzle.PuzzleFragment"
+        android:label="fragment_puzzle"
+        tools:layout="@layout/fragment_puzzle" />
+    <fragment
+        android:id="@+id/swipeFragment"
+        android:name="com.example.appsdev.Home.Swipe.SwipeFragment"
+        android:label="fragment_swipe"
+        tools:layout="@layout/fragment_swipe" />
+    <fragment
+        android:id="@+id/compressorFragment"
+        android:name="com.example.appsdev.Home.Compressor.CompressorFragment"
+        android:label="fragment_compressor"
+        tools:layout="@layout/fragment_compressor" />
+    <fragment
+        android:id="@+id/graficoFragment"
+        android:name="com.example.appsdev.Home.Graficos.GraficoFragment"
+        android:label="fragment_grafico"
+        tools:layout="@layout/fragment_grafico" />
+
 </navigation>

@@ -10,19 +10,14 @@ import javax.inject.Inject
 
 @HiltViewModel
 class AlertViewModel @Inject constructor(
-
 ) : ViewModel(){
     fun cargando() = liveData(Dispatchers.IO) {
-        emit(EstadosResult.Cargando(true))
+        emit(EstadosResult.Cargando)
         try {
             delay(5000)
             emit(EstadosResult.Correcto("SI FUNCIONO"))
         }catch (ex:Exception){
             emit(EstadosResult.Error(ex.message.toString()))
-        }finally {
-            emit(EstadosResult.Cargando(false))
         }
     }
-
-
 }

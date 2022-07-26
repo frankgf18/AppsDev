@@ -12,7 +12,10 @@ import com.example.appsdev.Core.EstadosResult2
 import com.example.appsdev.R
 import com.example.appsdev.databinding.FragmentLoaderBinding
 import dagger.hilt.android.AndroidEntryPoint
-
+/**
+ * Ing. Joel Maldonado Fernandez
+ * joelmaldonadodev@gmail.com
+ * */
 @AndroidEntryPoint
 class Loader : BaseFragment<FragmentLoaderBinding>(FragmentLoaderBinding::inflate) {
     private val viewModel : LoaderViewModel by viewModels()

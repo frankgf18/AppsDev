@@ -9,7 +9,10 @@ import android.view.ViewGroup
 import com.example.appsdev.R
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-
+/**
+ * Ing. Joel Maldonado Fernandez
+ * joelmaldonadodev@gmail.com
+ * */
 class MultiHilos : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

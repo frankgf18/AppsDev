@@ -14,6 +14,7 @@ import androidx.navigation.NavController
 import androidx.navigation.NavDirections
 import androidx.navigation.Navigation
 import androidx.viewbinding.ViewBinding
+import com.example.appsdev.Core.Utils.activarProgressBar
 
 typealias Inflate<T> = (LayoutInflater, ViewGroup?, Boolean) -> T
 
@@ -46,6 +47,20 @@ abstract class BaseFragment<VB : ViewBinding>(private val inflate:Inflate<VB>) :
         requireContext().startActivity(intent)
         if (destroy){
             activity?.finish()
+        }
+    }
+
+    protected fun <T>result(result:EstadosResult<T>, evento: (T?)->Unit){
+        when(result){
+            EstadosResult.Cargando -> requireActivity().activarProgressBar(true)
+            is EstadosResult.Correcto -> {
+                requireActivity().activarProgressBar(false)
+                evento(result.datos)
+            }
+            is EstadosResult.Error -> {
+                requireActivity().activarProgressBar(false)
+                show("${result.codigoError} - ${result.mensajeError}")
+            }
         }
     }
 

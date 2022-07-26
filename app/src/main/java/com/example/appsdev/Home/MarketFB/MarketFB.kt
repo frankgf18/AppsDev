@@ -8,7 +8,10 @@ import android.view.ViewGroup
 import com.example.appsdev.R
 import com.example.appsdev.databinding.FragmentMarketFbBinding
 import dagger.hilt.android.AndroidEntryPoint
-
+/**
+ * Ing. Joel Maldonado Fernandez
+ * joelmaldonadodev@gmail.com
+ * */
 @AndroidEntryPoint
 class MarketFB : Fragment() {
     private lateinit var binding: FragmentMarketFbBinding
