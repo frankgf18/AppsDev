@@ -25,4 +25,5 @@
     <string name="tvVerFoto"><u>Ver foto</u></string>
     <string name="tvSharedPreferences">Shared preferences</string>
     <string name="tvGuardar">Guardar</string>
+    <string name="dash">-</string>
 </resources>

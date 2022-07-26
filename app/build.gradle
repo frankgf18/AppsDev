@@ -125,7 +125,7 @@ dependencies {
     //Scratch
     implementation 'com.jackpocket:scratchoff:2.0.0'
 
-    //CHART
+    //MPAndroidChart
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
     //Ucrop
