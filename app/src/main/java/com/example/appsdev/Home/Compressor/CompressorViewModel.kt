@@ -27,15 +27,19 @@ class CompressorViewModel @Inject constructor():ViewModel() {
         try {
             val file = uriToFile(uri, context)
             val fileCompreso = Compressor.compress(context, file)
-            FOTO = fileCompreso.toString()
+            FOTO = fileCompreso.path
 
-            val folder = FirebaseStorage.getInstance().reference.child("AppsDev")
             FOTO?.let {
+                val folder = FirebaseStorage.getInstance().reference.child("AppsDev")
                 val appsdev = folder.child(it.toUri().lastPathSegment ?: "Sin_nombre")
-                appsdev.putFile(it.toUri()).addOnSuccessListener {
+                appsdev.putFile(File(it).toUri()).addOnSuccessListener {
                     appsdev.downloadUrl.addOnSuccessListener {url->
                         Log.i("fotoUrl",url.toString())
+                    }.addOnFailureListener{
+                        Log.i("fotoUrlErrorInterno",it.message ?: "NADA")
                     }
+                }.addOnFailureListener{
+                    Log.i("fotoUrlError",it.message ?: "NADA")
                 }
             }
             emit(EstadosResult.Correcto(listOf(fileCompreso,file)))

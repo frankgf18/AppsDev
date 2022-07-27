@@ -130,4 +130,7 @@ dependencies {
 
     //Ucrop
     implementation 'com.github.yalantis:ucrop:2.2.6'
+
+    //DrawerLayout
+    implementation "androidx.drawerlayout:drawerlayout:1.1.1"
 }

@@ -7,6 +7,7 @@ import android.content.ContextWrapper
 import android.content.Intent
 import android.content.pm.PackageManager.PERMISSION_DENIED
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.Matrix
 import android.media.ExifInterface
 import android.net.Uri
@@ -78,10 +79,10 @@ class CompressorFragment :
         }
         binding.btnFoto3.setOnClickListener {
             FOTO?.let {
-                binding.tvFoto31.text = it
-                binding.tvFoto32.text = it.toUri().toString()
-                binding.tvFoto33.text =  it.toUri().toFile().toString()
-                Glide.with(requireContext()).load(it.toUri().toFile().toString()).into(binding.ivFoto3)
+                val d = File(it).absolutePath
+                val bitmap = BitmapFactory.decodeFile(d)
+                binding.tvFoto31.text = bitmap.toString()
+                Glide.with(requireContext()).load(bitmap).into(binding.ivFoto3)
             }
         }
     }

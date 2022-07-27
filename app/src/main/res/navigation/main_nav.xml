@@ -104,6 +104,13 @@
             app:exitAnim="@anim/center_to_left"
             app:popEnterAnim="@anim/left_to_center"
             app:popExitAnim="@anim/center_to_rigth" />
+        <action
+            android:id="@+id/action_home_to_drawerFragment"
+            app:destination="@id/drawerFragment"
+            app:enterAnim="@anim/rigth_to_center"
+            app:exitAnim="@anim/center_to_left"
+            app:popEnterAnim="@anim/left_to_center"
+            app:popExitAnim="@anim/center_to_rigth"  />
     </fragment>
     <fragment
         android:id="@+id/dogedex"
@@ -294,5 +301,10 @@
         android:name="com.example.appsdev.Home.Graficos.GraficoFragment"
         android:label="fragment_grafico"
         tools:layout="@layout/fragment_grafico" />
+    <fragment
+        android:id="@+id/drawerFragment"
+        android:name="com.example.appsdev.Home.Drawer.DrawerFragment"
+        android:label="fragment_drawer"
+        tools:layout="@layout/fragment_drawer" />
 
 </navigation>
