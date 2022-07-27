@@ -27,6 +27,7 @@ class CompressorViewModel @Inject constructor():ViewModel() {
         try {
             val file = uriToFile(uri, context)
             val fileCompreso = Compressor.compress(context, file)
+            Log.d("FILE_FRANK", fileCompreso.path)
             FOTO = fileCompreso.path
 
             FOTO?.let {
@@ -46,9 +47,7 @@ class CompressorViewModel @Inject constructor():ViewModel() {
         }catch (ex:Exception){
             emit(EstadosResult.Error(ex.message ?: "Error al comprimir"))
         }
-
     }
-
 
     private fun uriToFile(uri: Uri, context: Context):File {
         val bit = uriToBitmap(uri, context)
