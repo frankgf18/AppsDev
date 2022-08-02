@@ -242,6 +242,13 @@
             app:exitAnim="@anim/center_to_left"
             app:popEnterAnim="@anim/left_to_center"
             app:popExitAnim="@anim/center_to_rigth" />
+        <action
+            android:id="@+id/action_animacion_to_motionLayout"
+            app:destination="@id/motionLayout"
+            app:enterAnim="@anim/rigth_to_center"
+            app:exitAnim="@anim/center_to_left"
+            app:popEnterAnim="@anim/left_to_center"
+            app:popExitAnim="@anim/center_to_rigth"/>
     </fragment>
     <fragment
         android:id="@+id/bottomPadre"
@@ -318,5 +325,10 @@
         android:name="com.example.appsdev.Home.Motion.MotionFragment"
         android:label="fragment_motion"
         tools:layout="@layout/fragment_motion" />
+    <fragment
+        android:id="@+id/motionLayout"
+        android:name="com.example.appsdev.Home.Animacion.MotionLayout.MotionLayout"
+        android:label="fragment_motion_layout"
+        tools:layout="@layout/fragment_motion_layout" />
 
 </navigation>

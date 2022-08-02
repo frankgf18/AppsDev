@@ -43,7 +43,8 @@ class Animacion : Fragment() {
         ItemsCards( 1,"Transiciones", R.id.action_animacion_to_animacionPadre),
         ItemsCards(2,"Bottom Layout", R.id.action_animacion_to_bottomPadre),
         ItemsCards(3,"Text Input", R.id.action_animacion_to_textInput),
-        ItemsCards(4,"CardView Desplegable", R.id.action_animacion_to_cardDesplegable)
+        ItemsCards(4,"CardView Desplegable", R.id.action_animacion_to_cardDesplegable),
+        ItemsCards(5,"Motion Layout", R.id.action_animacion_to_motionLayout)
     )
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_animacion, container, false)

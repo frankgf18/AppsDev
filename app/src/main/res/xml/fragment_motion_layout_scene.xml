@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="500">
+       <KeyFrameSet>
+           <KeyAttribute
+               motion:motionTarget="@+id/imgAlerta"
+               motion:framePosition="50"
+               android:alpha="0.5" />
+           <KeyAttribute
+               motion:motionTarget="@+id/imgAlerta"
+               motion:framePosition="100"
+               android:alpha="0" />
+       </KeyFrameSet>
+        <OnSwipe
+            motion:touchAnchorId="@+id/imgAlerta"
+            motion:touchAnchorSide="bottom" />
+
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/imgAlerta" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:layout_height="200dp"
+            android:layout_width="200dp"
+            android:id="@+id/imgAlerta"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintHorizontal_bias="0.611"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+        <Constraint
+            android:layout_width="200dp"
+            android:layout_height="1dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/imgAlerta"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="0dp" />
+    </ConstraintSet>
+</MotionScene>
