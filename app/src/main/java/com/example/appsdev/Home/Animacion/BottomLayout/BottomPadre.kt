@@ -16,7 +16,10 @@ import com.example.appsdev.databinding.CardHomeItemBinding
 import com.example.appsdev.databinding.FragmentBottomPadreBinding
 import com.example.appsdev.databinding.LayoutBottomSheetBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
-
+/**
+ * Ing. Frank Gutierrez Felipa
+ * frankgutierrezdev@gmail.com
+ * */
 @SuppressLint("SetTextI18n")
 class BottomPadre : Fragment() {
 
