@@ -249,6 +249,13 @@
             app:exitAnim="@anim/center_to_left"
             app:popEnterAnim="@anim/left_to_center"
             app:popExitAnim="@anim/center_to_rigth"/>
+        <action
+            android:id="@+id/action_animacion_to_progressbarBarra"
+            app:destination="@id/progressbarBarra"
+            app:enterAnim="@anim/rigth_to_center"
+            app:exitAnim="@anim/center_to_left"
+            app:popEnterAnim="@anim/left_to_center"
+            app:popExitAnim="@anim/center_to_rigth" />
     </fragment>
     <fragment
         android:id="@+id/bottomPadre"
@@ -330,5 +337,10 @@
         android:name="com.example.appsdev.Home.Animacion.MotionLayout.MotionLayout"
         android:label="fragment_motion_layout"
         tools:layout="@layout/fragment_motion_layout" />
+    <fragment
+        android:id="@+id/progressbarBarra"
+        android:name="com.example.appsdev.Home.Animacion.ProgressBar.ProgressbarBarra"
+        android:label="fragment_progressbar_barra"
+        tools:layout="@layout/fragment_progressbar_barra" />
 
 </navigation>
