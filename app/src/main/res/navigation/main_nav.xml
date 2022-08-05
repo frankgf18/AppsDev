@@ -256,6 +256,13 @@
             app:exitAnim="@anim/center_to_left"
             app:popEnterAnim="@anim/left_to_center"
             app:popExitAnim="@anim/center_to_rigth" />
+        <action
+            android:id="@+id/action_animacion_to_deslizarRecycleView"
+            app:destination="@id/deslizarRecycleView"
+            app:enterAnim="@anim/rigth_to_center"
+            app:exitAnim="@anim/center_to_left"
+            app:popEnterAnim="@anim/left_to_center"
+            app:popExitAnim="@anim/center_to_rigth"/>
     </fragment>
     <fragment
         android:id="@+id/bottomPadre"
@@ -342,5 +349,10 @@
         android:name="com.example.appsdev.Home.Animacion.ProgressBar.ProgressbarBarra"
         android:label="fragment_progressbar_barra"
         tools:layout="@layout/fragment_progressbar_barra" />
+    <fragment
+        android:id="@+id/deslizarRecycleView"
+        android:name="com.example.appsdev.Home.Animacion.DeslizarRecycleView.DeslizarRecycleView"
+        android:label="fragment_deslizar_recycle_view"
+        tools:layout="@layout/fragment_deslizar_recycle_view" />
 
 </navigation>

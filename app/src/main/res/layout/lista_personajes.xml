@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/viewBackgroundLPDB"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F44336">
+
+        <ImageView
+            android:id="@+id/deleteIconLPDB"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:contentDescription="@string/empty"
+            android:src="@drawable/ic_delete"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toStartOf="@+id/deleteIconLPDB"
+            android:layout_toLeftOf="@+id/deleteIconLPDB"
+            android:text="Eliminar"
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlLPDB"
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgPersonaLPDB"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="16dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/imgPersonaLPDB"
+            android:layout_toRightOf="@id/imgPersonaLPDB"
+            android:orientation="vertical"
+            android:padding="3dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvNombreLPDB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nombres..."
+                android:textColor="@color/black"
+                android:paddingHorizontal="16dp"/>
+            <TextView
+                android:id="@+id/tvDecripcionLPDB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingHorizontal="16dp"
+                android:text="Descripcion..."
+                android:textColor="@color/gray"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginHorizontal="72dp"
+            android:background="#DBDBDB"/>
+    </RelativeLayout>
+
+</FrameLayout>
