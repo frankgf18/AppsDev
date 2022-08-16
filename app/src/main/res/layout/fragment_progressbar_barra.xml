@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:background="@color/P6"
-    tools:context=".Home.Animacion.ProgressBar.ProgressbarBarra">
+    tools:context=".Home.Animacion.ProgressBar.ProgressbarBarra"
+    android:orientation="vertical">
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -17,82 +18,99 @@
                 android:layout_height="200dp"
                 android:background="@drawable/ic_flecha_barra_tareas"
                 android:paddingVertical="20dp"
-                android:layout_marginBottom="15dp">
+                android:paddingStart="20dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginEnd="15dp"
+                tools:ignore="RtlSymmetry">
 
-                <ProgressBar
-                    android:id="@+id/pbLunes"
-                    style="@style/ProgressbarVertical"
-                    android:layout_width="30dip"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="20dp"
-                    android:progress="10" />
+                <LinearLayout
+                    android:id="@+id/containerProgress"
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    android:orientation="horizontal"
+                    android:layout_gravity="bottom">
+                    <ProgressBar
+                        android:id="@+id/pbLunes"
+                        style="@style/ProgressbarVertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:indeterminate="false"
+                        android:layout_height="10dp"
+                        android:layout_gravity="bottom"
+                        tools:progress="0" />
 
-                <ProgressBar
-                    android:id="@+id/pbMartes"
-                    style="@style/ProgressbarVertical"
-                    android:layout_width="30dip"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:progress="40"
-                    android:layout_marginStart="10dp"/>
+                    <ProgressBar
+                        android:id="@+id/pbMartes"
+                        style="@style/ProgressbarVertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:progress="40"
+                        android:layout_marginStart="10dp"/>
 
-                <ProgressBar
-                    android:id="@+id/pbMiercoles"
-                    style="@style/ProgressbarVertical"
-                    android:layout_width="30dip"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:progress="30"
-                    android:layout_marginStart="10dp"/>
+                    <ProgressBar
+                        android:id="@+id/pbMiercoles"
+                        style="@style/ProgressbarVertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:progress="30"
+                        android:layout_marginStart="10dp"/>
 
-                <ProgressBar
-                    android:id="@+id/pbJueves"
-                    style="@style/ProgressbarVertical"
-                    android:layout_width="30dip"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:progress="80"
-                    android:layout_marginStart="10dp"/>
+                    <ProgressBar
+                        android:id="@+id/pbJueves"
+                        style="@style/ProgressbarVertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:progress="80"
+                        android:layout_marginStart="10dp"/>
 
-                <ProgressBar
-                    android:id="@+id/pbViernes"
-                    style="@style/ProgressbarVertical"
-                    android:layout_width="30dip"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:progress="10"
-                    android:layout_marginStart="10dp"/>
+                    <ProgressBar
+                        android:id="@+id/pbViernes"
+                        style="@style/ProgressbarVertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:progress="10"
+                        android:layout_marginStart="10dp"/>
 
-                <ProgressBar
-                    android:id="@+id/pbSabado"
-                    style="@style/ProgressbarVertical"
-                    android:layout_width="30dip"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:progress="40"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="15dp"/>
+                    <ProgressBar
+                        android:id="@+id/pbSabado"
+                        style="@style/ProgressbarVertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:progress="40"
+                        android:layout_marginStart="10dp"/>
+                </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_gravity="bottom">
+                android:layout_gravity="bottom"
+                android:layout_marginStart="20dp">
                 <TextView
-                    android:layout_width="30dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:textColor="@color/white"
                     android:textSize="12sp"
                     android:textAlignment="center"
-                    android:text="Lun"
-                    tools:ignore="SmallSp"
-                    android:layout_marginStart="20dp" />
+                    android:text="Lun"/>
 
                 <TextView
-                    android:layout_width="30dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:textColor="@color/white"
@@ -102,7 +120,8 @@
                     android:textSize="12sp"/>
 
                 <TextView
-                    android:layout_width="30dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:textColor="@color/white"
@@ -111,7 +130,8 @@
                     android:textAlignment="center"
                     android:layout_marginStart="10dp"/>
                 <TextView
-                    android:layout_width="30dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:textColor="@color/white"
@@ -120,7 +140,8 @@
                     android:textAlignment="center"
                     android:layout_marginStart="10dp"/>
                 <TextView
-                    android:layout_width="30dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:textColor="@color/white"
@@ -129,7 +150,8 @@
                     android:textAlignment="center"
                     android:layout_marginStart="10dp"/>
                 <TextView
-                    android:layout_width="30dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:textColor="@color/white"
@@ -141,5 +163,23 @@
 
         </FrameLayout>
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnAumentar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tvAumentar"
+        android:textAllCaps="false"
+        android:layout_marginTop="10dp"
+        android:textSize="14sp"/>
+
+    <Button
+        android:id="@+id/btnDisminuir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tvDisminuir"
+        android:textAllCaps="false"
+        android:layout_marginTop="10dp"
+        android:textSize="14sp"/>
 
 </LinearLayout>

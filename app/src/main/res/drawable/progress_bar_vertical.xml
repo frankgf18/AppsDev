@@ -11,26 +11,11 @@
                 android:startColor="#F07E30" />
         </shape>
     </item>
-    <!--item android:id="@android:id/secondaryProgress">
-        <clip
-            android:clipOrientation="vertical"
-            android:gravity="bottom">
-            <shape>
-                <corners android:radius="5dip" />
-                <gradient
-                    android:angle="180"
-                    android:centerColor="#80ffb600"
-                    android:centerY="0.75"
-                    android:endColor="#a0ffcb00"
-                    android:startColor="#80ffd300" />
-            </shape>
-        </clip>
-    </item>-->
     <item android:id="@android:id/progress">
         <clip
             android:clipOrientation="vertical"
             android:gravity="bottom">
-            <shape>
+            <shape android:shape="rectangle">
                 <corners android:radius="5dip" />
                 <gradient
                     android:angle="180"

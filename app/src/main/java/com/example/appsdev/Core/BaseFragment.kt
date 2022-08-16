@@ -2,6 +2,8 @@ package com.example.appsdev.Core
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -74,6 +76,10 @@ abstract class BaseFragment<VB : ViewBinding>(private val inflate:Inflate<VB>) :
 
     protected fun show(text:String, duration: Int = Toast.LENGTH_SHORT){
         Toast.makeText(requireContext(), text, duration).show()
+    }
+
+    protected fun delay(seconds:Long, event:(Boolean)->Unit){
+        Handler(Looper.getMainLooper()).postDelayed({event(true) },seconds)
     }
 
     @MainThread
