@@ -118,6 +118,13 @@
             app:exitAnim="@anim/center_to_left"
             app:popEnterAnim="@anim/left_to_center"
             app:popExitAnim="@anim/center_to_rigth"  />
+        <action
+            android:id="@+id/action_home_to_liveDataFragment"
+            app:destination="@id/liveDataFragment"
+            app:enterAnim="@anim/rigth_to_center"
+            app:exitAnim="@anim/center_to_left"
+            app:popEnterAnim="@anim/left_to_center"
+            app:popExitAnim="@anim/center_to_rigth"  />
     </fragment>
     <fragment
         android:id="@+id/dogedex"
@@ -354,5 +361,10 @@
         android:name="com.example.appsdev.Home.Animacion.DeslizarRecycleView.DeslizarRecycleView"
         android:label="fragment_deslizar_recycle_view"
         tools:layout="@layout/fragment_deslizar_recycle_view" />
+    <fragment
+        android:id="@+id/liveDataFragment"
+        android:name="com.example.appsdev.Home.LiveData.LiveDataFragment"
+        android:label="fragment_live_data"
+        tools:layout="@layout/fragment_live_data" />
 
 </navigation>

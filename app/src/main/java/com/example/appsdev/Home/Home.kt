@@ -66,6 +66,7 @@ class Home : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
         ItemsCards(15, "Grafico",R.id.action_home_to_graficoFragment, R.drawable.ic_rafico),
         ItemsCards(16, "Drawer",R.id.action_home_to_drawerFragment, R.drawable.ic_drawer),
         ItemsCards(17, "Motion",R.id.action_home_to_motionFragment, R.drawable.ic_motion),
+        ItemsCards(18, "LiveData",R.id.action_home_to_liveDataFragment, R.drawable.ic_lottie),
     )
 
     data class ItemsCards(
