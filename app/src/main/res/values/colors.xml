@@ -25,4 +25,7 @@
     <color name="P6">#0545F2</color>
     <color name="P8">#2C664A</color>
     <color name="P9">#1A4166</color>
+    <color name="verde">#0D8811</color>
+    <color name="azul">#004FBD</color>
+    <color name="anaranjado">#D44404</color>
 </resources>
