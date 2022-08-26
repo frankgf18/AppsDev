@@ -158,6 +158,12 @@
         <action
             android:id="@+id/action_tools_to_progressBar2"
             app:destination="@id/progressBar2" />
+        <action
+            android:id="@+id/action_tools_to_tableLayoutFragment"
+            app:destination="@id/tableLayoutFragment" />
+        <action
+            android:id="@+id/action_tools_to_calendarFragment"
+            app:destination="@id/calendarFragment" />
     </fragment>
     <fragment
         android:id="@+id/anyChart"
@@ -366,5 +372,15 @@
         android:name="com.example.appsdev.Home.LiveData.LiveDataFragment"
         android:label="fragment_live_data"
         tools:layout="@layout/fragment_live_data" />
+    <fragment
+        android:id="@+id/tableLayoutFragment"
+        android:name="com.example.appsdev.Home.Tools.TableLayout.TableLayoutFragment"
+        android:label="fragment_table_layout"
+        tools:layout="@layout/fragment_table_layout" />
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.example.appsdev.Home.Tools.Calendar.CalendarFragment"
+        android:label="fragment_calendar"
+        tools:layout="@layout/fragment_calendar" />
 
 </navigation>

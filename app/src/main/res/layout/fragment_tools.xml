@@ -163,6 +163,7 @@
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="0dp"
+            android:id="@+id/cardTableLayout"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:layout_marginVertical="10dp"
@@ -188,7 +189,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    tools:text="Camara" />
+                    android:text="TableLayout" />
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
@@ -196,6 +197,7 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:id="@+id/cardCalendar"
             android:layout_marginVertical="10dp"
             android:layout_marginEnd="20dp"
             android:layout_weight="1"
@@ -220,7 +222,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    tools:text="RecyclerView" />
+                    android:text="Calendario" />
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>

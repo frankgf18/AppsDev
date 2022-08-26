@@ -30,6 +30,8 @@ class Tools : Fragment() {
             cardCamara.setOnClickListener { navigate(R.id.action_tools_to_camara) }
             cardRecyclerView.setOnClickListener { navigate(R.id.action_tools_to_recyclerView) }
             cardProgressBar.setOnClickListener { navigate(R.id.action_tools_to_progressBar2) }
+            cardTableLayout.setOnClickListener { navigate(R.id.action_tools_to_tableLayoutFragment) }
+            cardCalendar.setOnClickListener { navigate(R.id.action_tools_to_calendarFragment) }
         }
     }
 }
