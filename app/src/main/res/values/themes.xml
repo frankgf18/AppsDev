@@ -24,6 +24,14 @@
         <item name="android:background">@android:color/transparent</item>
     </style>
 
+    <style
+        name="CustomStyle"
+        parent="android:Theme.Dialog">
+        <item
+            name="android:windowBackground">@android:color/transparent</item>
+        <item
+            name="android:windowContentOverlay">@null</item>
+    </style>
     <!-- ProgressBar -->
     <!--<style name="Widget"></style>
 
